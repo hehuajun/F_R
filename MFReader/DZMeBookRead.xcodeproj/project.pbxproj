@@ -1,0 +1,1195 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3BE00E371F0E163300239A79 /* BookInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE00E351F0E163300239A79 /* BookInfoCell.swift */; };
+		3BE00E381F0E163300239A79 /* BookInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BE00E361F0E163300239A79 /* BookInfoCell.xib */; };
+		3BE00E3B1F0E177400239A79 /* MasterDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE00E391F0E177400239A79 /* MasterDetailCell.swift */; };
+		3BE00E3C1F0E177400239A79 /* MasterDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BE00E3A1F0E177400239A79 /* MasterDetailCell.xib */; };
+		3BE00E3F1F0E1E5700239A79 /* RelativeBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE00E3D1F0E1E5700239A79 /* RelativeBookCell.swift */; };
+		3BE00E401F0E1E5700239A79 /* RelativeBookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BE00E3E1F0E1E5700239A79 /* RelativeBookCell.xib */; };
+		7E18B2201E238B1E008C71A8 /* YAScrollSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E18B21F1E238B1E008C71A8 /* YAScrollSegmentControl.m */; };
+		7E18B2221E238D34008C71A8 /* HJNavModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E18B2211E238D34008C71A8 /* HJNavModel.swift */; };
+		7E18B22F1E2F0934008C71A8 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E18B22E1E2F0934008C71A8 /* Storyboard.storyboard */; };
+		7E18B2311E2F0965008C71A8 /* HJMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E18B2301E2F0965008C71A8 /* HJMainViewController.swift */; };
+		7E18B2331E2F0A6E008C71A8 /* TBLRcmdInMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E18B2321E2F0A6E008C71A8 /* TBLRcmdInMainVC.swift */; };
+		7E18B2391E2F14DA008C71A8 /* GuidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E18B2381E2F14DA008C71A8 /* GuidViewController.swift */; };
+		7E41F6CC1E7FC45500E46F7E /* BookCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E41F6CB1E7FC45500E46F7E /* BookCityViewController.swift */; };
+		7E41F6CE1E822C5600E46F7E /* HistoryRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E41F6CD1E822C5600E46F7E /* HistoryRecordViewController.swift */; };
+		7E41F6D01E8E2BF900E46F7E /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E41F6CF1E8E2BF800E46F7E /* BookDetailViewController.swift */; };
+		7E451F111E8F48CB003482BF /* TBLBookDetailInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E451F101E8F48CB003482BF /* TBLBookDetailInfo.swift */; };
+		7E451F131E8F56C8003482BF /* TBLCharpters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E451F121E8F56C7003482BF /* TBLCharpters.swift */; };
+		7E451F151E8F598B003482BF /* TBLAllSaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E451F141E8F598B003482BF /* TBLAllSaw.swift */; };
+		7E565EF41E35A31B00539390 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E565EF31E35A31B00539390 /* Info.plist */; };
+		7E80386D1E7FADDA004A90F5 /* TVCCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E80386C1E7FADDA004A90F5 /* TVCCollection.swift */; };
+		7E80386F1E7FBA29004A90F5 /* MyCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E80386E1E7FBA29004A90F5 /* MyCenterViewController.swift */; };
+		7E90E5AD1E7F78580069677E /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E90E5AC1E7F78580069677E /* CollectionViewController.swift */; };
+		7E90E5AF1E7F81C00069677E /* CollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E90E5AE1E7F81C00069677E /* CollectionView.xib */; };
+		7EEADC4E1E2F1A6600005778 /* ZJLeadingPageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EEADC4B1E2F1A6600005778 /* ZJLeadingPageCell.m */; };
+		7EEADC4F1E2F1A6600005778 /* ZJLeadingPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EEADC4D1E2F1A6600005778 /* ZJLeadingPageController.m */; };
+		7EEADC861E305BB300005778 /* 书城(1)@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EEADC7C1E305BB300005778 /* 书城(1)@2x.png */; };
+		7EEADC871E305BB300005778 /* 书城@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EEADC7D1E305BB300005778 /* 书城@2x.png */; };
+		7EEADC881E305BB300005778 /* 分类(1)@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EEADC7E1E305BB300005778 /* 分类(1)@2x.png */; };
+		7EEADC891E305BB300005778 /* 分类@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EEADC7F1E305BB300005778 /* 分类@2x.png */; };
+		7EEADC8A1E305BB300005778 /* 好评(1)@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EEADC801E305BB300005778 /* 好评(1)@2x.png */; };
+		7EEADC8B1E305BB300005778 /* 好评@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EEADC811E305BB300005778 /* 好评@2x.png */; };
+		7EEADC8C1E305BB300005778 /* 小说(1)@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EEADC821E305BB300005778 /* 小说(1)@2x.png */; };
+		7EEADC8D1E305BB300005778 /* 小说@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EEADC831E305BB300005778 /* 小说@2x.png */; };
+		7EEADC8E1E305BB300005778 /* 设置(1)@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EEADC841E305BB300005778 /* 设置(1)@2x.png */; };
+		7EEADC8F1E305BB300005778 /* 设置@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EEADC851E305BB300005778 /* 设置@2x.png */; };
+		7EEADC921E305D7A00005778 /* 主页@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EEADC901E305D7A00005778 /* 主页@2x.png */; };
+		7EEADC931E305D7A00005778 /* 主页(1)@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EEADC911E305D7A00005778 /* 主页(1)@2x.png */; };
+		7EEADC961E3066BC00005778 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EEADC951E3066BC00005778 /* Helper.m */; };
+		7EEADC981E30675800005778 /* HJConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEADC971E30675800005778 /* HJConst.swift */; };
+		7EEADC9E1E306E2C00005778 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7EEADC9A1E306E2C00005778 /* 1.jpg */; };
+		7EEADC9F1E306E2C00005778 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7EEADC9B1E306E2C00005778 /* 2.jpg */; };
+		7EEADCA01E306E2C00005778 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7EEADC9C1E306E2C00005778 /* 3.jpg */; };
+		7EEADCA11E306E2C00005778 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7EEADC9D1E306E2C00005778 /* 4.jpg */; };
+		96FB3E90C9424DD3644CEE89 /* Pods_DZMeBookRead.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9FFE67DC8FD9DA71EF0953 /* Pods_DZMeBookRead.framework */; };
+		AF29592E1D7BB33700C880E7 /* HJReadConfigureManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2959111D7BB33700C880E7 /* HJReadConfigureManger.swift */; };
+		AF29592F1D7BB33700C880E7 /* HJReadPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2959121D7BB33700C880E7 /* HJReadPageController.swift */; };
+		AF2959301D7BB33700C880E7 /* HJReadPageDataConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2959131D7BB33700C880E7 /* HJReadPageDataConfigure.swift */; };
+		AF2959311D7BB33700C880E7 /* HJReadParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2959141D7BB33700C880E7 /* HJReadParser.swift */; };
+		AF2959321D7BB33700C880E7 /* HJReadSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2959151D7BB33700C880E7 /* HJReadSetup.swift */; };
+		AF2959331D7BB33700C880E7 /* HJReadUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2959161D7BB33700C880E7 /* HJReadUI.swift */; };
+		AF2959341D7BB33700C880E7 /* HJReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2959171D7BB33700C880E7 /* HJReadViewController.swift */; };
+		AF2959381D7BB33700C880E7 /* HJReadChapterListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF29591C1D7BB33700C880E7 /* HJReadChapterListModel.swift */; };
+		AF2959391D7BB33700C880E7 /* HJReadChapterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF29591D1D7BB33700C880E7 /* HJReadChapterModel.swift */; };
+		AF29593A1D7BB33700C880E7 /* HJReadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF29591E1D7BB33700C880E7 /* HJReadModel.swift */; };
+		AF29593B1D7BB33700C880E7 /* HJReadRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF29591F1D7BB33700C880E7 /* HJReadRecord.swift */; };
+		AF29593C1D7BB33700C880E7 /* HJReadBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2959211D7BB33700C880E7 /* HJReadBottomView.swift */; };
+		AF29593D1D7BB33700C880E7 /* HJReadLeftHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2959221D7BB33700C880E7 /* HJReadLeftHeaderView.swift */; };
+		AF29593E1D7BB33700C880E7 /* HJReadLeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2959231D7BB33700C880E7 /* HJReadLeftView.swift */; };
+		AF29593F1D7BB33700C880E7 /* HJReadLeftViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2959241D7BB33700C880E7 /* HJReadLeftViewCell.swift */; };
+		AF2959401D7BB33700C880E7 /* HJReadLightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2959251D7BB33700C880E7 /* HJReadLightView.swift */; };
+		AF2959411D7BB33700C880E7 /* HJReadSettingColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2959261D7BB33700C880E7 /* HJReadSettingColorView.swift */; };
+		AF2959421D7BB33700C880E7 /* HJReadSettingCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2959271D7BB33700C880E7 /* HJReadSettingCustomView.swift */; };
+		AF2959431D7BB33700C880E7 /* HJReadSettingFlipEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2959281D7BB33700C880E7 /* HJReadSettingFlipEffectView.swift */; };
+		AF2959441D7BB33700C880E7 /* HJReadSettingFontSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2959291D7BB33700C880E7 /* HJReadSettingFontSizeView.swift */; };
+		AF2959451D7BB33700C880E7 /* HJReadSettingFontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF29592A1D7BB33700C880E7 /* HJReadSettingFontView.swift */; };
+		AF2959461D7BB33700C880E7 /* HJReadSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF29592B1D7BB33700C880E7 /* HJReadSettingView.swift */; };
+		AF2959471D7BB33700C880E7 /* HJReadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF29592C1D7BB33700C880E7 /* HJReadView.swift */; };
+		AF2959481D7BB33700C880E7 /* HJReadViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF29592D1D7BB33700C880E7 /* HJReadViewCell.swift */; };
+		AF29594A1D7BB4AC00C880E7 /* HJTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2959491D7BB4AC00C880E7 /* HJTableViewController.swift */; };
+		AF29594C1D7BB4CF00C880E7 /* HJTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF29594B1D7BB4CF00C880E7 /* HJTableView.swift */; };
+		AF29594E1D7BB50700C880E7 /* HJNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF29594D1D7BB50700C880E7 /* HJNavigationController.swift */; };
+		AF30BCDE1D7FAF79006390AC /* HJReadBottomStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30BCDD1D7FAF79006390AC /* HJReadBottomStatusView.swift */; };
+		AF33A0601D7FEA61007B79EE /* HJBatteryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF33A05F1D7FEA61007B79EE /* HJBatteryView.swift */; };
+		AF3742AE1DB7122E00E448DC /* HJReadTopStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3742AD1DB7122E00E448DC /* HJReadTopStatusView.swift */; };
+		AF6424691DB6216D005252A4 /* DZMCoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6424681DB6216D005252A4 /* DZMCoverController.m */; };
+		AF6964C71D76CA9F005FF098 /* DZMeBookReadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6964C61D76CA9F005FF098 /* DZMeBookReadTests.swift */; };
+		AF6964D21D76CA9F005FF098 /* DZMeBookReadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6964D11D76CA9F005FF098 /* DZMeBookReadUITests.swift */; };
+		AF69654F1D76CF1C005FF098 /* 求魔.txt in Resources */ = {isa = PBXBuildFile; fileRef = AF69654D1D76CF1C005FF098 /* 求魔.txt */; };
+		AF6965501D76CF1C005FF098 /* mdjyml.txt in Resources */ = {isa = PBXBuildFile; fileRef = AF69654E1D76CF1C005FF098 /* mdjyml.txt */; };
+		AF8E56261DE584910079029F /* HJReadLeftBookMarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8E56251DE584910079029F /* HJReadLeftBookMarkCell.swift */; };
+		AF9CB6631DE29C1200E9C469 /* HJReadMarkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9CB6621DE29C1200E9C469 /* HJReadMarkModel.swift */; };
+		AFA682EC1D76D31800870EBF /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA682B31D76D31800870EBF /* NSObject+Extension.swift */; };
+		AFA682ED1D76D31800870EBF /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA682B41D76D31800870EBF /* String+Extension.swift */; };
+		AFA682EE1D76D31800870EBF /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA682B51D76D31800870EBF /* UIBarButtonItem+Extension.swift */; };
+		AFA682EF1D76D31800870EBF /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA682B61D76D31800870EBF /* UIFont+Extension.swift */; };
+		AFA682F01D76D31800870EBF /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA682B71D76D31800870EBF /* UIImage+Extension.swift */; };
+		AFA682F11D76D31800870EBF /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA682B81D76D31800870EBF /* UIScrollView+Extension.swift */; };
+		AFA682F21D76D31800870EBF /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA682B91D76D31800870EBF /* UIView+Extension.swift */; };
+		AFA682F31D76D31800870EBF /* HJAttrOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA682BB1D76D31800870EBF /* HJAttrOne.swift */; };
+		AFA682F41D76D31800870EBF /* HJAttrTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA682BC1D76D31800870EBF /* HJAttrTwo.swift */; };
+		AFA682F71D76D31800870EBF /* HJEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA682BF1D76D31800870EBF /* HJEnum.swift */; };
+		AFA682F81D76D31800870EBF /* HJFuncOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA682C01D76D31800870EBF /* HJFuncOne.swift */; };
+		AFA682F91D76D31800870EBF /* HJFuncTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA682C11D76D31800870EBF /* HJFuncTwo.swift */; };
+		AFA682FA1D76D31800870EBF /* HJManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA682C21D76D31800870EBF /* HJManager.swift */; };
+		AFA682FC1D76D31800870EBF /* HJUIFuncOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA682C41D76D31800870EBF /* HJUIFuncOne.swift */; };
+		AFA682FD1D76D31800870EBF /* HJUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA682C51D76D31800870EBF /* HJUserDefaults.swift */; };
+		AFA682FE1D76D31800870EBF /* HJViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA682C61D76D31800870EBF /* HJViewController.swift */; };
+		AFA683171D76D31800870EBF /* MBProgressHUD+DZM.m in Sources */ = {isa = PBXBuildFile; fileRef = AFA682E81D76D31800870EBF /* MBProgressHUD+DZM.m */; };
+		AFA683181D76D31800870EBF /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AFA682E91D76D31800870EBF /* MBProgressHUD.bundle */; };
+		AFA683191D76D31800870EBF /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AFA682EB1D76D31800870EBF /* MBProgressHUD.m */; };
+		AFA683221D76D33500870EBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6831A1D76D33500870EBF /* AppDelegate.swift */; };
+		AFA683231D76D33500870EBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFA6831B1D76D33500870EBF /* Assets.xcassets */; };
+		AFA683241D76D33500870EBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFA6831D1D76D33500870EBF /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AF6964C31D76CA9F005FF098 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF6964A61D76CA9F005FF098 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF6964AD1D76CA9F005FF098;
+			remoteInfo = DZMeBookRead;
+		};
+		AF6964CE1D76CA9F005FF098 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF6964A61D76CA9F005FF098 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF6964AD1D76CA9F005FF098;
+			remoteInfo = DZMeBookRead;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0F9FFE67DC8FD9DA71EF0953 /* Pods_DZMeBookRead.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DZMeBookRead.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DD7E0630460014C2513539F /* Pods-DZMeBookRead.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DZMeBookRead.release.xcconfig"; path = "Pods/Target Support Files/Pods-DZMeBookRead/Pods-DZMeBookRead.release.xcconfig"; sourceTree = "<group>"; };
+		3BE00E351F0E163300239A79 /* BookInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookInfoCell.swift; sourceTree = "<group>"; };
+		3BE00E361F0E163300239A79 /* BookInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookInfoCell.xib; sourceTree = "<group>"; };
+		3BE00E391F0E177400239A79 /* MasterDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterDetailCell.swift; sourceTree = "<group>"; };
+		3BE00E3A1F0E177400239A79 /* MasterDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MasterDetailCell.xib; sourceTree = "<group>"; };
+		3BE00E3D1F0E1E5700239A79 /* RelativeBookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelativeBookCell.swift; sourceTree = "<group>"; };
+		3BE00E3E1F0E1E5700239A79 /* RelativeBookCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RelativeBookCell.xib; sourceTree = "<group>"; };
+		7E18B21E1E238B1E008C71A8 /* YAScrollSegmentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAScrollSegmentControl.h; sourceTree = "<group>"; };
+		7E18B21F1E238B1E008C71A8 /* YAScrollSegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAScrollSegmentControl.m; sourceTree = "<group>"; };
+		7E18B2211E238D34008C71A8 /* HJNavModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJNavModel.swift; sourceTree = "<group>"; };
+		7E18B22E1E2F0934008C71A8 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		7E18B2301E2F0965008C71A8 /* HJMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJMainViewController.swift; sourceTree = "<group>"; };
+		7E18B2321E2F0A6E008C71A8 /* TBLRcmdInMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBLRcmdInMainVC.swift; sourceTree = "<group>"; };
+		7E18B2381E2F14DA008C71A8 /* GuidViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuidViewController.swift; sourceTree = "<group>"; };
+		7E41F6CB1E7FC45500E46F7E /* BookCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCityViewController.swift; sourceTree = "<group>"; };
+		7E41F6CD1E822C5600E46F7E /* HistoryRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryRecordViewController.swift; sourceTree = "<group>"; };
+		7E41F6CF1E8E2BF800E46F7E /* BookDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
+		7E451F101E8F48CB003482BF /* TBLBookDetailInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBLBookDetailInfo.swift; sourceTree = "<group>"; };
+		7E451F121E8F56C7003482BF /* TBLCharpters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBLCharpters.swift; sourceTree = "<group>"; };
+		7E451F141E8F598B003482BF /* TBLAllSaw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBLAllSaw.swift; sourceTree = "<group>"; };
+		7E565EF31E35A31B00539390 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E80386C1E7FADDA004A90F5 /* TVCCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVCCollection.swift; sourceTree = "<group>"; };
+		7E80386E1E7FBA29004A90F5 /* MyCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCenterViewController.swift; sourceTree = "<group>"; };
+		7E90E5AC1E7F78580069677E /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		7E90E5AE1E7F81C00069677E /* CollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionView.xib; sourceTree = "<group>"; };
+		7EB783801E1E711300C716F0 /* Bridge-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridge-Header.h"; sourceTree = "<group>"; };
+		7EEADC4A1E2F1A6600005778 /* ZJLeadingPageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJLeadingPageCell.h; sourceTree = "<group>"; };
+		7EEADC4B1E2F1A6600005778 /* ZJLeadingPageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJLeadingPageCell.m; sourceTree = "<group>"; };
+		7EEADC4C1E2F1A6600005778 /* ZJLeadingPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJLeadingPageController.h; sourceTree = "<group>"; };
+		7EEADC4D1E2F1A6600005778 /* ZJLeadingPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJLeadingPageController.m; sourceTree = "<group>"; };
+		7EEADC7C1E305BB300005778 /* 书城(1)@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "书城(1)@2x.png"; sourceTree = "<group>"; };
+		7EEADC7D1E305BB300005778 /* 书城@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "书城@2x.png"; sourceTree = "<group>"; };
+		7EEADC7E1E305BB300005778 /* 分类(1)@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分类(1)@2x.png"; sourceTree = "<group>"; };
+		7EEADC7F1E305BB300005778 /* 分类@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分类@2x.png"; sourceTree = "<group>"; };
+		7EEADC801E305BB300005778 /* 好评(1)@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "好评(1)@2x.png"; sourceTree = "<group>"; };
+		7EEADC811E305BB300005778 /* 好评@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "好评@2x.png"; sourceTree = "<group>"; };
+		7EEADC821E305BB300005778 /* 小说(1)@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "小说(1)@2x.png"; sourceTree = "<group>"; };
+		7EEADC831E305BB300005778 /* 小说@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "小说@2x.png"; sourceTree = "<group>"; };
+		7EEADC841E305BB300005778 /* 设置(1)@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "设置(1)@2x.png"; sourceTree = "<group>"; };
+		7EEADC851E305BB300005778 /* 设置@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "设置@2x.png"; sourceTree = "<group>"; };
+		7EEADC901E305D7A00005778 /* 主页@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "主页@2x.png"; sourceTree = "<group>"; };
+		7EEADC911E305D7A00005778 /* 主页(1)@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "主页(1)@2x.png"; sourceTree = "<group>"; };
+		7EEADC941E3066BC00005778 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
+		7EEADC951E3066BC00005778 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
+		7EEADC971E30675800005778 /* HJConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJConst.swift; sourceTree = "<group>"; };
+		7EEADC9A1E306E2C00005778 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		7EEADC9B1E306E2C00005778 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		7EEADC9C1E306E2C00005778 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		7EEADC9D1E306E2C00005778 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
+		AF2959111D7BB33700C880E7 /* HJReadConfigureManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJReadConfigureManger.swift; sourceTree = "<group>"; };
+		AF2959121D7BB33700C880E7 /* HJReadPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJReadPageController.swift; sourceTree = "<group>"; };
+		AF2959131D7BB33700C880E7 /* HJReadPageDataConfigure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJReadPageDataConfigure.swift; sourceTree = "<group>"; };
+		AF2959141D7BB33700C880E7 /* HJReadParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJReadParser.swift; sourceTree = "<group>"; };
+		AF2959151D7BB33700C880E7 /* HJReadSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJReadSetup.swift; sourceTree = "<group>"; };
+		AF2959161D7BB33700C880E7 /* HJReadUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJReadUI.swift; sourceTree = "<group>"; };
+		AF2959171D7BB33700C880E7 /* HJReadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJReadViewController.swift; sourceTree = "<group>"; };
+		AF29591C1D7BB33700C880E7 /* HJReadChapterListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJReadChapterListModel.swift; sourceTree = "<group>"; };
+		AF29591D1D7BB33700C880E7 /* HJReadChapterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJReadChapterModel.swift; sourceTree = "<group>"; };
+		AF29591E1D7BB33700C880E7 /* HJReadModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJReadModel.swift; sourceTree = "<group>"; };
+		AF29591F1D7BB33700C880E7 /* HJReadRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJReadRecord.swift; sourceTree = "<group>"; };
+		AF2959211D7BB33700C880E7 /* HJReadBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJReadBottomView.swift; sourceTree = "<group>"; };
+		AF2959221D7BB33700C880E7 /* HJReadLeftHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJReadLeftHeaderView.swift; sourceTree = "<group>"; };
+		AF2959231D7BB33700C880E7 /* HJReadLeftView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJReadLeftView.swift; sourceTree = "<group>"; };
+		AF2959241D7BB33700C880E7 /* HJReadLeftViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJReadLeftViewCell.swift; sourceTree = "<group>"; };
+		AF2959251D7BB33700C880E7 /* HJReadLightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJReadLightView.swift; sourceTree = "<group>"; };
+		AF2959261D7BB33700C880E7 /* HJReadSettingColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJReadSettingColorView.swift; sourceTree = "<group>"; };
+		AF2959271D7BB33700C880E7 /* HJReadSettingCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJReadSettingCustomView.swift; sourceTree = "<group>"; };
+		AF2959281D7BB33700C880E7 /* HJReadSettingFlipEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJReadSettingFlipEffectView.swift; sourceTree = "<group>"; };
+		AF2959291D7BB33700C880E7 /* HJReadSettingFontSizeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJReadSettingFontSizeView.swift; sourceTree = "<group>"; };
+		AF29592A1D7BB33700C880E7 /* HJReadSettingFontView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJReadSettingFontView.swift; sourceTree = "<group>"; };
+		AF29592B1D7BB33700C880E7 /* HJReadSettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJReadSettingView.swift; sourceTree = "<group>"; };
+		AF29592C1D7BB33700C880E7 /* HJReadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJReadView.swift; sourceTree = "<group>"; };
+		AF29592D1D7BB33700C880E7 /* HJReadViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJReadViewCell.swift; sourceTree = "<group>"; };
+		AF2959491D7BB4AC00C880E7 /* HJTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJTableViewController.swift; sourceTree = "<group>"; };
+		AF29594B1D7BB4CF00C880E7 /* HJTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJTableView.swift; sourceTree = "<group>"; };
+		AF29594D1D7BB50700C880E7 /* HJNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJNavigationController.swift; sourceTree = "<group>"; };
+		AF30BCDD1D7FAF79006390AC /* HJReadBottomStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJReadBottomStatusView.swift; sourceTree = "<group>"; };
+		AF33A05F1D7FEA61007B79EE /* HJBatteryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJBatteryView.swift; sourceTree = "<group>"; };
+		AF3742AD1DB7122E00E448DC /* HJReadTopStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJReadTopStatusView.swift; sourceTree = "<group>"; };
+		AF6424671DB6216D005252A4 /* DZMCoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZMCoverController.h; sourceTree = "<group>"; };
+		AF6424681DB6216D005252A4 /* DZMCoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZMCoverController.m; sourceTree = "<group>"; };
+		AF6964AE1D76CA9F005FF098 /* DZMeBookRead.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DZMeBookRead.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF6964C21D76CA9F005FF098 /* DZMeBookReadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DZMeBookReadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF6964C61D76CA9F005FF098 /* DZMeBookReadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZMeBookReadTests.swift; sourceTree = "<group>"; };
+		AF6964C81D76CA9F005FF098 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF6964CD1D76CA9F005FF098 /* DZMeBookReadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DZMeBookReadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF6964D11D76CA9F005FF098 /* DZMeBookReadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZMeBookReadUITests.swift; sourceTree = "<group>"; };
+		AF6964D31D76CA9F005FF098 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF69654D1D76CF1C005FF098 /* 求魔.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "求魔.txt"; sourceTree = "<group>"; };
+		AF69654E1D76CF1C005FF098 /* mdjyml.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mdjyml.txt; sourceTree = "<group>"; };
+		AF8E56251DE584910079029F /* HJReadLeftBookMarkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJReadLeftBookMarkCell.swift; sourceTree = "<group>"; };
+		AF9CB6621DE29C1200E9C469 /* HJReadMarkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJReadMarkModel.swift; sourceTree = "<group>"; };
+		AFA682B31D76D31800870EBF /* NSObject+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
+		AFA682B41D76D31800870EBF /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		AFA682B51D76D31800870EBF /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
+		AFA682B61D76D31800870EBF /* UIFont+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		AFA682B71D76D31800870EBF /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		AFA682B81D76D31800870EBF /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
+		AFA682B91D76D31800870EBF /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		AFA682BB1D76D31800870EBF /* HJAttrOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJAttrOne.swift; sourceTree = "<group>"; };
+		AFA682BC1D76D31800870EBF /* HJAttrTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJAttrTwo.swift; sourceTree = "<group>"; };
+		AFA682BF1D76D31800870EBF /* HJEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJEnum.swift; sourceTree = "<group>"; };
+		AFA682C01D76D31800870EBF /* HJFuncOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJFuncOne.swift; sourceTree = "<group>"; };
+		AFA682C11D76D31800870EBF /* HJFuncTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJFuncTwo.swift; sourceTree = "<group>"; };
+		AFA682C21D76D31800870EBF /* HJManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJManager.swift; sourceTree = "<group>"; };
+		AFA682C41D76D31800870EBF /* HJUIFuncOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJUIFuncOne.swift; sourceTree = "<group>"; };
+		AFA682C51D76D31800870EBF /* HJUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJUserDefaults.swift; sourceTree = "<group>"; };
+		AFA682C61D76D31800870EBF /* HJViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJViewController.swift; sourceTree = "<group>"; };
+		AFA682E71D76D31800870EBF /* MBProgressHUD+DZM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+DZM.h"; sourceTree = "<group>"; };
+		AFA682E81D76D31800870EBF /* MBProgressHUD+DZM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+DZM.m"; sourceTree = "<group>"; };
+		AFA682E91D76D31800870EBF /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		AFA682EA1D76D31800870EBF /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		AFA682EB1D76D31800870EBF /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		AFA6831A1D76D33500870EBF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AFA6831B1D76D33500870EBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AFA6831E1D76D33500870EBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AFA6831F1D76D33500870EBF /* DZMeBookRead-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DZMeBookRead-Bridging-Header.h"; sourceTree = "<group>"; };
+		C07F0AEEE0BB1B6860B3C2D5 /* Pods-DZMeBookRead.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DZMeBookRead.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DZMeBookRead/Pods-DZMeBookRead.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AF6964AB1D76CA9F005FF098 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96FB3E90C9424DD3644CEE89 /* Pods_DZMeBookRead.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF6964BF1D76CA9F005FF098 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF6964CA1D76CA9F005FF098 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		291E10871D3C878AFEF1A661 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C07F0AEEE0BB1B6860B3C2D5 /* Pods-DZMeBookRead.debug.xcconfig */,
+				1DD7E0630460014C2513539F /* Pods-DZMeBookRead.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		764B7EF0D314D32FA7F92466 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0F9FFE67DC8FD9DA71EF0953 /* Pods_DZMeBookRead.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7E18B21B1E238B1E008C71A8 /* YAScrollSegmentControl */ = {
+			isa = PBXGroup;
+			children = (
+				7E18B21C1E238B1E008C71A8 /* Pod */,
+			);
+			path = YAScrollSegmentControl;
+			sourceTree = "<group>";
+		};
+		7E18B21C1E238B1E008C71A8 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				7E18B21D1E238B1E008C71A8 /* Classes */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		7E18B21D1E238B1E008C71A8 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7E18B21E1E238B1E008C71A8 /* YAScrollSegmentControl.h */,
+				7E18B21F1E238B1E008C71A8 /* YAScrollSegmentControl.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		7E18B2281E2F08B4008C71A8 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				7E18B22B1E2F0934008C71A8 /* Controller */,
+				7E18B22C1E2F0934008C71A8 /* Models */,
+				7E18B22D1E2F0934008C71A8 /* Views */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		7E18B22B1E2F0934008C71A8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7E18B2301E2F0965008C71A8 /* HJMainViewController.swift */,
+				7E90E5AC1E7F78580069677E /* CollectionViewController.swift */,
+				7E80386E1E7FBA29004A90F5 /* MyCenterViewController.swift */,
+				7E41F6CB1E7FC45500E46F7E /* BookCityViewController.swift */,
+				7E41F6CD1E822C5600E46F7E /* HistoryRecordViewController.swift */,
+				7E41F6CF1E8E2BF800E46F7E /* BookDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7E18B22C1E2F0934008C71A8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7E18B22D1E2F0934008C71A8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7E18B22E1E2F0934008C71A8 /* Storyboard.storyboard */,
+				7E18B2321E2F0A6E008C71A8 /* TBLRcmdInMainVC.swift */,
+				7E90E5AE1E7F81C00069677E /* CollectionView.xib */,
+				7E80386C1E7FADDA004A90F5 /* TVCCollection.swift */,
+				7E451F101E8F48CB003482BF /* TBLBookDetailInfo.swift */,
+				7E451F121E8F56C7003482BF /* TBLCharpters.swift */,
+				7E451F141E8F598B003482BF /* TBLAllSaw.swift */,
+				3BE00E351F0E163300239A79 /* BookInfoCell.swift */,
+				3BE00E361F0E163300239A79 /* BookInfoCell.xib */,
+				3BE00E391F0E177400239A79 /* MasterDetailCell.swift */,
+				3BE00E3A1F0E177400239A79 /* MasterDetailCell.xib */,
+				3BE00E3D1F0E1E5700239A79 /* RelativeBookCell.swift */,
+				3BE00E3E1F0E1E5700239A79 /* RelativeBookCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7E18B2371E2F14DA008C71A8 /* Guid */ = {
+			isa = PBXGroup;
+			children = (
+				7E18B2381E2F14DA008C71A8 /* GuidViewController.swift */,
+			);
+			path = Guid;
+			sourceTree = "<group>";
+		};
+		7EEADC491E2F1A6600005778 /* ZJLeadingPageController */ = {
+			isa = PBXGroup;
+			children = (
+				7EEADC4A1E2F1A6600005778 /* ZJLeadingPageCell.h */,
+				7EEADC4B1E2F1A6600005778 /* ZJLeadingPageCell.m */,
+				7EEADC4C1E2F1A6600005778 /* ZJLeadingPageController.h */,
+				7EEADC4D1E2F1A6600005778 /* ZJLeadingPageController.m */,
+			);
+			path = ZJLeadingPageController;
+			sourceTree = "<group>";
+		};
+		7EEADC7A1E305BA400005778 /* Resoures */ = {
+			isa = PBXGroup;
+			children = (
+				7EEADC991E306E2C00005778 /* GuidImages */,
+				7EEADC7B1E305BB300005778 /* Icons */,
+			);
+			path = Resoures;
+			sourceTree = "<group>";
+		};
+		7EEADC7B1E305BB300005778 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				7EEADC901E305D7A00005778 /* 主页@2x.png */,
+				7EEADC911E305D7A00005778 /* 主页(1)@2x.png */,
+				7EEADC7C1E305BB300005778 /* 书城(1)@2x.png */,
+				7EEADC7D1E305BB300005778 /* 书城@2x.png */,
+				7EEADC7E1E305BB300005778 /* 分类(1)@2x.png */,
+				7EEADC7F1E305BB300005778 /* 分类@2x.png */,
+				7EEADC801E305BB300005778 /* 好评(1)@2x.png */,
+				7EEADC811E305BB300005778 /* 好评@2x.png */,
+				7EEADC821E305BB300005778 /* 小说(1)@2x.png */,
+				7EEADC831E305BB300005778 /* 小说@2x.png */,
+				7EEADC841E305BB300005778 /* 设置(1)@2x.png */,
+				7EEADC851E305BB300005778 /* 设置@2x.png */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
+		7EEADC991E306E2C00005778 /* GuidImages */ = {
+			isa = PBXGroup;
+			children = (
+				7EEADC9A1E306E2C00005778 /* 1.jpg */,
+				7EEADC9B1E306E2C00005778 /* 2.jpg */,
+				7EEADC9C1E306E2C00005778 /* 3.jpg */,
+				7EEADC9D1E306E2C00005778 /* 4.jpg */,
+			);
+			path = GuidImages;
+			sourceTree = "<group>";
+		};
+		AF2959101D7BB33700C880E7 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				AF2959121D7BB33700C880E7 /* HJReadPageController.swift */,
+				AF2959171D7BB33700C880E7 /* HJReadViewController.swift */,
+				AF2959111D7BB33700C880E7 /* HJReadConfigureManger.swift */,
+				AF2959131D7BB33700C880E7 /* HJReadPageDataConfigure.swift */,
+				AF2959141D7BB33700C880E7 /* HJReadParser.swift */,
+				AF2959151D7BB33700C880E7 /* HJReadSetup.swift */,
+				AF2959161D7BB33700C880E7 /* HJReadUI.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		AF29591A1D7BB33700C880E7 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				AF9CB6621DE29C1200E9C469 /* HJReadMarkModel.swift */,
+				AF29591C1D7BB33700C880E7 /* HJReadChapterListModel.swift */,
+				AF29591D1D7BB33700C880E7 /* HJReadChapterModel.swift */,
+				AF29591E1D7BB33700C880E7 /* HJReadModel.swift */,
+				AF29591F1D7BB33700C880E7 /* HJReadRecord.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		AF2959201D7BB33700C880E7 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				AF3742AD1DB7122E00E448DC /* HJReadTopStatusView.swift */,
+				AF2959211D7BB33700C880E7 /* HJReadBottomView.swift */,
+				AF2959221D7BB33700C880E7 /* HJReadLeftHeaderView.swift */,
+				AF2959231D7BB33700C880E7 /* HJReadLeftView.swift */,
+				AF2959241D7BB33700C880E7 /* HJReadLeftViewCell.swift */,
+				AF8E56251DE584910079029F /* HJReadLeftBookMarkCell.swift */,
+				AF2959251D7BB33700C880E7 /* HJReadLightView.swift */,
+				AF2959261D7BB33700C880E7 /* HJReadSettingColorView.swift */,
+				AF2959271D7BB33700C880E7 /* HJReadSettingCustomView.swift */,
+				AF2959281D7BB33700C880E7 /* HJReadSettingFlipEffectView.swift */,
+				AF2959291D7BB33700C880E7 /* HJReadSettingFontSizeView.swift */,
+				AF29592A1D7BB33700C880E7 /* HJReadSettingFontView.swift */,
+				AF29592B1D7BB33700C880E7 /* HJReadSettingView.swift */,
+				AF29592C1D7BB33700C880E7 /* HJReadView.swift */,
+				AF29592D1D7BB33700C880E7 /* HJReadViewCell.swift */,
+				AF30BCDD1D7FAF79006390AC /* HJReadBottomStatusView.swift */,
+				AF33A05F1D7FEA61007B79EE /* HJBatteryView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		AF6424661DB6216D005252A4 /* DZMCoverController */ = {
+			isa = PBXGroup;
+			children = (
+				AF6424671DB6216D005252A4 /* DZMCoverController.h */,
+				AF6424681DB6216D005252A4 /* DZMCoverController.m */,
+			);
+			path = DZMCoverController;
+			sourceTree = "<group>";
+		};
+		AF6964A51D76CA9F005FF098 = {
+			isa = PBXGroup;
+			children = (
+				7EB783801E1E711300C716F0 /* Bridge-Header.h */,
+				AF6964B01D76CA9F005FF098 /* DZMeBookRead */,
+				AF6964C51D76CA9F005FF098 /* DZMeBookReadTests */,
+				AF6964D01D76CA9F005FF098 /* DZMeBookReadUITests */,
+				AF6964AF1D76CA9F005FF098 /* Products */,
+				291E10871D3C878AFEF1A661 /* Pods */,
+				764B7EF0D314D32FA7F92466 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AF6964AF1D76CA9F005FF098 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF6964AE1D76CA9F005FF098 /* DZMeBookRead.app */,
+				AF6964C21D76CA9F005FF098 /* DZMeBookReadTests.xctest */,
+				AF6964CD1D76CA9F005FF098 /* DZMeBookReadUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF6964B01D76CA9F005FF098 /* DZMeBookRead */ = {
+			isa = PBXGroup;
+			children = (
+				AFA682B11D76D31800870EBF /* class */,
+				AF69654D1D76CF1C005FF098 /* 求魔.txt */,
+				AF69654E1D76CF1C005FF098 /* mdjyml.txt */,
+			);
+			path = DZMeBookRead;
+			sourceTree = "<group>";
+		};
+		AF6964C51D76CA9F005FF098 /* DZMeBookReadTests */ = {
+			isa = PBXGroup;
+			children = (
+				AF6964C61D76CA9F005FF098 /* DZMeBookReadTests.swift */,
+				AF6964C81D76CA9F005FF098 /* Info.plist */,
+			);
+			path = DZMeBookReadTests;
+			sourceTree = "<group>";
+		};
+		AF6964D01D76CA9F005FF098 /* DZMeBookReadUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AF6964D11D76CA9F005FF098 /* DZMeBookReadUITests.swift */,
+				AF6964D31D76CA9F005FF098 /* Info.plist */,
+			);
+			path = DZMeBookReadUITests;
+			sourceTree = "<group>";
+		};
+		AFA682B11D76D31800870EBF /* class */ = {
+			isa = PBXGroup;
+			children = (
+				7E18B2371E2F14DA008C71A8 /* Guid */,
+				7E18B2281E2F08B4008C71A8 /* Main */,
+				AFA682B21D76D31800870EBF /* Extension(扩展) */,
+				AFA682BA1D76D31800870EBF /* Global(公用) */,
+				AFA682C71D76D31800870EBF /* Other(其他) */,
+				AFA682C81D76D31800870EBF /* Read(阅读) */,
+				7EEADC7A1E305BA400005778 /* Resoures */,
+				AFA682E51D76D31800870EBF /* ThirdParty(第三方) */,
+			);
+			path = class;
+			sourceTree = "<group>";
+		};
+		AFA682B21D76D31800870EBF /* Extension(扩展) */ = {
+			isa = PBXGroup;
+			children = (
+				AFA682B31D76D31800870EBF /* NSObject+Extension.swift */,
+				AFA682B41D76D31800870EBF /* String+Extension.swift */,
+				AFA682B51D76D31800870EBF /* UIBarButtonItem+Extension.swift */,
+				AFA682B61D76D31800870EBF /* UIFont+Extension.swift */,
+				AFA682B71D76D31800870EBF /* UIImage+Extension.swift */,
+				AFA682B81D76D31800870EBF /* UIScrollView+Extension.swift */,
+				AFA682B91D76D31800870EBF /* UIView+Extension.swift */,
+			);
+			path = "Extension(扩展)";
+			sourceTree = "<group>";
+		};
+		AFA682BA1D76D31800870EBF /* Global(公用) */ = {
+			isa = PBXGroup;
+			children = (
+				7EEADC941E3066BC00005778 /* Helper.h */,
+				7EEADC951E3066BC00005778 /* Helper.m */,
+				AF29594D1D7BB50700C880E7 /* HJNavigationController.swift */,
+				AF29594B1D7BB4CF00C880E7 /* HJTableView.swift */,
+				AF2959491D7BB4AC00C880E7 /* HJTableViewController.swift */,
+				AFA682BB1D76D31800870EBF /* HJAttrOne.swift */,
+				AFA682BC1D76D31800870EBF /* HJAttrTwo.swift */,
+				AFA682BF1D76D31800870EBF /* HJEnum.swift */,
+				AFA682C01D76D31800870EBF /* HJFuncOne.swift */,
+				AFA682C11D76D31800870EBF /* HJFuncTwo.swift */,
+				AFA682C21D76D31800870EBF /* HJManager.swift */,
+				AFA682C41D76D31800870EBF /* HJUIFuncOne.swift */,
+				AFA682C51D76D31800870EBF /* HJUserDefaults.swift */,
+				AFA682C61D76D31800870EBF /* HJViewController.swift */,
+				7E18B2211E238D34008C71A8 /* HJNavModel.swift */,
+				7EEADC971E30675800005778 /* HJConst.swift */,
+			);
+			path = "Global(公用)";
+			sourceTree = "<group>";
+		};
+		AFA682C71D76D31800870EBF /* Other(其他) */ = {
+			isa = PBXGroup;
+			children = (
+				7E565EF31E35A31B00539390 /* Info.plist */,
+				AFA6831A1D76D33500870EBF /* AppDelegate.swift */,
+				AFA6831B1D76D33500870EBF /* Assets.xcassets */,
+				AFA6831C1D76D33500870EBF /* Base.lproj */,
+				AFA6831F1D76D33500870EBF /* DZMeBookRead-Bridging-Header.h */,
+			);
+			path = "Other(其他)";
+			sourceTree = "<group>";
+		};
+		AFA682C81D76D31800870EBF /* Read(阅读) */ = {
+			isa = PBXGroup;
+			children = (
+				AF2959101D7BB33700C880E7 /* controller */,
+				AF29591A1D7BB33700C880E7 /* model */,
+				AF2959201D7BB33700C880E7 /* view */,
+			);
+			path = "Read(阅读)";
+			sourceTree = "<group>";
+		};
+		AFA682E51D76D31800870EBF /* ThirdParty(第三方) */ = {
+			isa = PBXGroup;
+			children = (
+				7EEADC491E2F1A6600005778 /* ZJLeadingPageController */,
+				7E18B21B1E238B1E008C71A8 /* YAScrollSegmentControl */,
+				AF6424661DB6216D005252A4 /* DZMCoverController */,
+				AFA682E61D76D31800870EBF /* MBProgressHUD */,
+			);
+			path = "ThirdParty(第三方)";
+			sourceTree = "<group>";
+		};
+		AFA682E61D76D31800870EBF /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				AFA682E71D76D31800870EBF /* MBProgressHUD+DZM.h */,
+				AFA682E81D76D31800870EBF /* MBProgressHUD+DZM.m */,
+				AFA682E91D76D31800870EBF /* MBProgressHUD.bundle */,
+				AFA682EA1D76D31800870EBF /* MBProgressHUD.h */,
+				AFA682EB1D76D31800870EBF /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		AFA6831C1D76D33500870EBF /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				AFA6831D1D76D33500870EBF /* LaunchScreen.storyboard */,
+			);
+			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AF6964AD1D76CA9F005FF098 /* DZMeBookRead */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF6964D61D76CA9F005FF098 /* Build configuration list for PBXNativeTarget "DZMeBookRead" */;
+			buildPhases = (
+				10FA1DA7976471E2D7DFA06F /* [CP] Check Pods Manifest.lock */,
+				AF6964AA1D76CA9F005FF098 /* Sources */,
+				AF6964AB1D76CA9F005FF098 /* Frameworks */,
+				AF6964AC1D76CA9F005FF098 /* Resources */,
+				0C8DF5AF6237C6984E410E92 /* [CP] Embed Pods Frameworks */,
+				26D1C8A5AC832E710522736B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DZMeBookRead;
+			productName = DZMeBookRead;
+			productReference = AF6964AE1D76CA9F005FF098 /* DZMeBookRead.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AF6964C11D76CA9F005FF098 /* DZMeBookReadTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF6964D91D76CA9F005FF098 /* Build configuration list for PBXNativeTarget "DZMeBookReadTests" */;
+			buildPhases = (
+				AF6964BE1D76CA9F005FF098 /* Sources */,
+				AF6964BF1D76CA9F005FF098 /* Frameworks */,
+				AF6964C01D76CA9F005FF098 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF6964C41D76CA9F005FF098 /* PBXTargetDependency */,
+			);
+			name = DZMeBookReadTests;
+			productName = DZMeBookReadTests;
+			productReference = AF6964C21D76CA9F005FF098 /* DZMeBookReadTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AF6964CC1D76CA9F005FF098 /* DZMeBookReadUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF6964DC1D76CA9F005FF098 /* Build configuration list for PBXNativeTarget "DZMeBookReadUITests" */;
+			buildPhases = (
+				AF6964C91D76CA9F005FF098 /* Sources */,
+				AF6964CA1D76CA9F005FF098 /* Frameworks */,
+				AF6964CB1D76CA9F005FF098 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF6964CF1D76CA9F005FF098 /* PBXTargetDependency */,
+			);
+			name = DZMeBookReadUITests;
+			productName = DZMeBookReadUITests;
+			productReference = AF6964CD1D76CA9F005FF098 /* DZMeBookReadUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AF6964A61D76CA9F005FF098 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = DZM;
+				TargetAttributes = {
+					AF6964AD1D76CA9F005FF098 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 8GYTW3DY5G;
+						LastSwiftMigration = 0810;
+						ProvisioningStyle = Automatic;
+					};
+					AF6964C11D76CA9F005FF098 = {
+						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0810;
+						TestTargetID = AF6964AD1D76CA9F005FF098;
+					};
+					AF6964CC1D76CA9F005FF098 = {
+						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0810;
+						TestTargetID = AF6964AD1D76CA9F005FF098;
+					};
+				};
+			};
+			buildConfigurationList = AF6964A91D76CA9F005FF098 /* Build configuration list for PBXProject "DZMeBookRead" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AF6964A51D76CA9F005FF098;
+			productRefGroup = AF6964AF1D76CA9F005FF098 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AF6964AD1D76CA9F005FF098 /* DZMeBookRead */,
+				AF6964C11D76CA9F005FF098 /* DZMeBookReadTests */,
+				AF6964CC1D76CA9F005FF098 /* DZMeBookReadUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AF6964AC1D76CA9F005FF098 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BE00E3C1F0E177400239A79 /* MasterDetailCell.xib in Resources */,
+				3BE00E401F0E1E5700239A79 /* RelativeBookCell.xib in Resources */,
+				7EEADC8B1E305BB300005778 /* 好评@2x.png in Resources */,
+				7EEADC891E305BB300005778 /* 分类@2x.png in Resources */,
+				7EEADC871E305BB300005778 /* 书城@2x.png in Resources */,
+				7EEADC8C1E305BB300005778 /* 小说(1)@2x.png in Resources */,
+				AF6965501D76CF1C005FF098 /* mdjyml.txt in Resources */,
+				AF69654F1D76CF1C005FF098 /* 求魔.txt in Resources */,
+				7EEADC861E305BB300005778 /* 书城(1)@2x.png in Resources */,
+				AFA683231D76D33500870EBF /* Assets.xcassets in Resources */,
+				7EEADC9F1E306E2C00005778 /* 2.jpg in Resources */,
+				7EEADC9E1E306E2C00005778 /* 1.jpg in Resources */,
+				7E565EF41E35A31B00539390 /* Info.plist in Resources */,
+				7EEADCA01E306E2C00005778 /* 3.jpg in Resources */,
+				7EEADCA11E306E2C00005778 /* 4.jpg in Resources */,
+				AFA683241D76D33500870EBF /* LaunchScreen.storyboard in Resources */,
+				3BE00E381F0E163300239A79 /* BookInfoCell.xib in Resources */,
+				7EEADC8E1E305BB300005778 /* 设置(1)@2x.png in Resources */,
+				7EEADC8D1E305BB300005778 /* 小说@2x.png in Resources */,
+				7EEADC931E305D7A00005778 /* 主页(1)@2x.png in Resources */,
+				7E18B22F1E2F0934008C71A8 /* Storyboard.storyboard in Resources */,
+				7E90E5AF1E7F81C00069677E /* CollectionView.xib in Resources */,
+				AFA683181D76D31800870EBF /* MBProgressHUD.bundle in Resources */,
+				7EEADC881E305BB300005778 /* 分类(1)@2x.png in Resources */,
+				7EEADC8A1E305BB300005778 /* 好评(1)@2x.png in Resources */,
+				7EEADC8F1E305BB300005778 /* 设置@2x.png in Resources */,
+				7EEADC921E305D7A00005778 /* 主页@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF6964C01D76CA9F005FF098 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF6964CB1D76CA9F005FF098 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C8DF5AF6237C6984E410E92 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DZMeBookRead/Pods-DZMeBookRead-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		10FA1DA7976471E2D7DFA06F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		26D1C8A5AC832E710522736B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DZMeBookRead/Pods-DZMeBookRead-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AF6964AA1D76CA9F005FF098 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF8E56261DE584910079029F /* HJReadLeftBookMarkCell.swift in Sources */,
+				AF2959421D7BB33700C880E7 /* HJReadSettingCustomView.swift in Sources */,
+				7E41F6CC1E7FC45500E46F7E /* BookCityViewController.swift in Sources */,
+				AF3742AE1DB7122E00E448DC /* HJReadTopStatusView.swift in Sources */,
+				7E451F151E8F598B003482BF /* TBLAllSaw.swift in Sources */,
+				AF29592E1D7BB33700C880E7 /* HJReadConfigureManger.swift in Sources */,
+				AF29593A1D7BB33700C880E7 /* HJReadModel.swift in Sources */,
+				AF2959311D7BB33700C880E7 /* HJReadParser.swift in Sources */,
+				3BE00E3B1F0E177400239A79 /* MasterDetailCell.swift in Sources */,
+				AFA682ED1D76D31800870EBF /* String+Extension.swift in Sources */,
+				AF2959461D7BB33700C880E7 /* HJReadSettingView.swift in Sources */,
+				AF2959321D7BB33700C880E7 /* HJReadSetup.swift in Sources */,
+				AFA682FC1D76D31800870EBF /* HJUIFuncOne.swift in Sources */,
+				AFA682FE1D76D31800870EBF /* HJViewController.swift in Sources */,
+				7E41F6D01E8E2BF900E46F7E /* BookDetailViewController.swift in Sources */,
+				AF30BCDE1D7FAF79006390AC /* HJReadBottomStatusView.swift in Sources */,
+				7E90E5AD1E7F78580069677E /* CollectionViewController.swift in Sources */,
+				AF2959431D7BB33700C880E7 /* HJReadSettingFlipEffectView.swift in Sources */,
+				AF29594C1D7BB4CF00C880E7 /* HJTableView.swift in Sources */,
+				AF2959401D7BB33700C880E7 /* HJReadLightView.swift in Sources */,
+				7E451F131E8F56C8003482BF /* TBLCharpters.swift in Sources */,
+				AF9CB6631DE29C1200E9C469 /* HJReadMarkModel.swift in Sources */,
+				7E80386D1E7FADDA004A90F5 /* TVCCollection.swift in Sources */,
+				AF29594E1D7BB50700C880E7 /* HJNavigationController.swift in Sources */,
+				AF29593F1D7BB33700C880E7 /* HJReadLeftViewCell.swift in Sources */,
+				7E451F111E8F48CB003482BF /* TBLBookDetailInfo.swift in Sources */,
+				AFA682F31D76D31800870EBF /* HJAttrOne.swift in Sources */,
+				7EEADC961E3066BC00005778 /* Helper.m in Sources */,
+				AFA683171D76D31800870EBF /* MBProgressHUD+DZM.m in Sources */,
+				AFA682F21D76D31800870EBF /* UIView+Extension.swift in Sources */,
+				7E18B2331E2F0A6E008C71A8 /* TBLRcmdInMainVC.swift in Sources */,
+				AFA682F91D76D31800870EBF /* HJFuncTwo.swift in Sources */,
+				7E18B2221E238D34008C71A8 /* HJNavModel.swift in Sources */,
+				7E41F6CE1E822C5600E46F7E /* HistoryRecordViewController.swift in Sources */,
+				7E18B2391E2F14DA008C71A8 /* GuidViewController.swift in Sources */,
+				AF29593B1D7BB33700C880E7 /* HJReadRecord.swift in Sources */,
+				7E80386F1E7FBA29004A90F5 /* MyCenterViewController.swift in Sources */,
+				AF29592F1D7BB33700C880E7 /* HJReadPageController.swift in Sources */,
+				AF29594A1D7BB4AC00C880E7 /* HJTableViewController.swift in Sources */,
+				AFA682F11D76D31800870EBF /* UIScrollView+Extension.swift in Sources */,
+				7EEADC4E1E2F1A6600005778 /* ZJLeadingPageCell.m in Sources */,
+				AF29593E1D7BB33700C880E7 /* HJReadLeftView.swift in Sources */,
+				AFA682FD1D76D31800870EBF /* HJUserDefaults.swift in Sources */,
+				AF6424691DB6216D005252A4 /* DZMCoverController.m in Sources */,
+				AF2959481D7BB33700C880E7 /* HJReadViewCell.swift in Sources */,
+				7E18B2201E238B1E008C71A8 /* YAScrollSegmentControl.m in Sources */,
+				AF2959441D7BB33700C880E7 /* HJReadSettingFontSizeView.swift in Sources */,
+				AF29593C1D7BB33700C880E7 /* HJReadBottomView.swift in Sources */,
+				7EEADC4F1E2F1A6600005778 /* ZJLeadingPageController.m in Sources */,
+				7E18B2311E2F0965008C71A8 /* HJMainViewController.swift in Sources */,
+				AFA682F41D76D31800870EBF /* HJAttrTwo.swift in Sources */,
+				AFA683221D76D33500870EBF /* AppDelegate.swift in Sources */,
+				AF2959341D7BB33700C880E7 /* HJReadViewController.swift in Sources */,
+				AFA683191D76D31800870EBF /* MBProgressHUD.m in Sources */,
+				3BE00E3F1F0E1E5700239A79 /* RelativeBookCell.swift in Sources */,
+				AFA682F71D76D31800870EBF /* HJEnum.swift in Sources */,
+				AFA682FA1D76D31800870EBF /* HJManager.swift in Sources */,
+				AF2959451D7BB33700C880E7 /* HJReadSettingFontView.swift in Sources */,
+				AF2959411D7BB33700C880E7 /* HJReadSettingColorView.swift in Sources */,
+				AFA682EE1D76D31800870EBF /* UIBarButtonItem+Extension.swift in Sources */,
+				AFA682F81D76D31800870EBF /* HJFuncOne.swift in Sources */,
+				AF33A0601D7FEA61007B79EE /* HJBatteryView.swift in Sources */,
+				AF2959381D7BB33700C880E7 /* HJReadChapterListModel.swift in Sources */,
+				AFA682F01D76D31800870EBF /* UIImage+Extension.swift in Sources */,
+				AFA682EF1D76D31800870EBF /* UIFont+Extension.swift in Sources */,
+				AF2959301D7BB33700C880E7 /* HJReadPageDataConfigure.swift in Sources */,
+				3BE00E371F0E163300239A79 /* BookInfoCell.swift in Sources */,
+				AF2959391D7BB33700C880E7 /* HJReadChapterModel.swift in Sources */,
+				7EEADC981E30675800005778 /* HJConst.swift in Sources */,
+				AFA682EC1D76D31800870EBF /* NSObject+Extension.swift in Sources */,
+				AF29593D1D7BB33700C880E7 /* HJReadLeftHeaderView.swift in Sources */,
+				AF2959331D7BB33700C880E7 /* HJReadUI.swift in Sources */,
+				AF2959471D7BB33700C880E7 /* HJReadView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF6964BE1D76CA9F005FF098 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF6964C71D76CA9F005FF098 /* DZMeBookReadTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF6964C91D76CA9F005FF098 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF6964D21D76CA9F005FF098 /* DZMeBookReadUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AF6964C41D76CA9F005FF098 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF6964AD1D76CA9F005FF098 /* DZMeBookRead */;
+			targetProxy = AF6964C31D76CA9F005FF098 /* PBXContainerItemProxy */;
+		};
+		AF6964CF1D76CA9F005FF098 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF6964AD1D76CA9F005FF098 /* DZMeBookRead */;
+			targetProxy = AF6964CE1D76CA9F005FF098 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AFA6831D1D76D33500870EBF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AFA6831E1D76D33500870EBF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AF6964D41D76CA9F005FF098 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AF6964D51D76CA9F005FF098 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AF6964D71D76CA9F005FF098 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C07F0AEEE0BB1B6860B3C2D5 /* Pods-DZMeBookRead.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8GYTW3DY5G;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = DZMeBookRead/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D DEBUG";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hhj.DZMeBookRead782;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/Bridge-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
+			};
+			name = Debug;
+		};
+		AF6964D81D76CA9F005FF098 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DD7E0630460014C2513539F /* Pods-DZMeBookRead.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8GYTW3DY5G;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = DZMeBookRead/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D DEBUG";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hhj.DZMeBookRead782;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/Bridge-Header.h";
+				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
+			};
+			name = Release;
+		};
+		AF6964DA1D76CA9F005FF098 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DZMeBookReadTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.DZM.DZMeBookReadTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DZMeBookRead.app/DZMeBookRead";
+			};
+			name = Debug;
+		};
+		AF6964DB1D76CA9F005FF098 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DZMeBookReadTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.DZM.DZMeBookReadTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DZMeBookRead.app/DZMeBookRead";
+			};
+			name = Release;
+		};
+		AF6964DD1D76CA9F005FF098 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DZMeBookReadUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.DZM.DZMeBookReadUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = DZMeBookRead;
+			};
+			name = Debug;
+		};
+		AF6964DE1D76CA9F005FF098 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DZMeBookReadUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.DZM.DZMeBookReadUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = DZMeBookRead;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AF6964A91D76CA9F005FF098 /* Build configuration list for PBXProject "DZMeBookRead" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF6964D41D76CA9F005FF098 /* Debug */,
+				AF6964D51D76CA9F005FF098 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF6964D61D76CA9F005FF098 /* Build configuration list for PBXNativeTarget "DZMeBookRead" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF6964D71D76CA9F005FF098 /* Debug */,
+				AF6964D81D76CA9F005FF098 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF6964D91D76CA9F005FF098 /* Build configuration list for PBXNativeTarget "DZMeBookReadTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF6964DA1D76CA9F005FF098 /* Debug */,
+				AF6964DB1D76CA9F005FF098 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF6964DC1D76CA9F005FF098 /* Build configuration list for PBXNativeTarget "DZMeBookReadUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF6964DD1D76CA9F005FF098 /* Debug */,
+				AF6964DE1D76CA9F005FF098 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AF6964A61D76CA9F005FF098 /* Project object */;
+}

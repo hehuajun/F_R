@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LLCycleScrollView" customModule="LLCycleScrollView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </view>
+        <collectionViewController id="FlH-nb-yWM" customClass="CollectionViewController" customModule="DZMeBookRead" customModuleProvider="target">
+            <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="tPQ-yX-BkW">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7OV-Mr-mOW">
+                    <size key="itemSize" width="160" height="168"/>
+                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                </collectionViewFlowLayout>
+                <cells>
+                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCellID" id="aWr-aU-NTO">
+                        <rect key="frame" x="0.0" y="0.0" width="144" height="191"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                            <rect key="frame" x="0.0" y="0.0" width="144" height="191"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="49O-vT-A1O">
+                                    <rect key="frame" x="8" y="8" width="128" height="122"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--&gt; 有更新" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLb-OF-4mb">
+                                    <rect key="frame" x="8" y="162" width="128" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="21" id="FuO-5g-hq9"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="霸气的书名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bws-gd-UNG">
+                                    <rect key="frame" x="8" y="137" width="128" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="21" id="HPl-m4-5xV"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </view>
+                        <constraints>
+                            <constraint firstItem="bws-gd-UNG" firstAttribute="top" secondItem="49O-vT-A1O" secondAttribute="bottom" constant="7" id="6tA-mz-yDB"/>
+                            <constraint firstItem="49O-vT-A1O" firstAttribute="trailing" secondItem="aWr-aU-NTO" secondAttribute="trailingMargin" id="AO9-yB-CHZ"/>
+                            <constraint firstItem="oLb-OF-4mb" firstAttribute="bottom" secondItem="aWr-aU-NTO" secondAttribute="bottomMargin" id="SvU-Rb-XXD"/>
+                            <constraint firstItem="49O-vT-A1O" firstAttribute="top" secondItem="aWr-aU-NTO" secondAttribute="topMargin" id="UKj-eN-gUK"/>
+                            <constraint firstItem="49O-vT-A1O" firstAttribute="leading" secondItem="bws-gd-UNG" secondAttribute="leading" id="b5f-SI-VSu"/>
+                            <constraint firstItem="bws-gd-UNG" firstAttribute="trailing" secondItem="oLb-OF-4mb" secondAttribute="trailing" id="h3N-10-gFx"/>
+                            <constraint firstItem="bws-gd-UNG" firstAttribute="leading" secondItem="oLb-OF-4mb" secondAttribute="leading" id="kYe-UC-rqC"/>
+                            <constraint firstItem="oLb-OF-4mb" firstAttribute="top" secondItem="bws-gd-UNG" secondAttribute="bottom" constant="4" id="oLW-ol-bhh"/>
+                            <constraint firstItem="49O-vT-A1O" firstAttribute="trailing" secondItem="bws-gd-UNG" secondAttribute="trailing" id="pIa-yg-snD"/>
+                            <constraint firstItem="49O-vT-A1O" firstAttribute="leading" secondItem="aWr-aU-NTO" secondAttribute="leadingMargin" id="vfs-2h-YNl"/>
+                        </constraints>
+                        <size key="customSize" width="144" height="191"/>
+                    </collectionViewCell>
+                </cells>
+                <connections>
+                    <outlet property="dataSource" destination="FlH-nb-yWM" id="B9t-vB-Nxx"/>
+                    <outlet property="delegate" destination="FlH-nb-yWM" id="MMb-N5-V5c"/>
+                </connections>
+            </collectionView>
+            <point key="canvasLocation" x="-828" y="168"/>
+        </collectionViewController>
+    </objects>
+</document>

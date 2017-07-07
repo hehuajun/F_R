@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "73c1e7ee-b8c0-4444-9d2e-8e2eb3c03471++2664",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "73c1e7ee-b8c0-4444-9d2e-8e2eb3c03471++2664" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "73c1e7ee-b8c0-4444-9d2e-8e2eb3c03471++2664" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "474DFE53-3A00-4D11-B567-6B36CBFE519B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "73c1e7ee-b8c0-4444-9d2e-8e2eb3c03471++2664" : "FreeReader\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "DZMeBookRead",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Reader\/DZMeBookRead.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/123.56.193.88\/svn\/iOSSourceCode",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "73c1e7ee-b8c0-4444-9d2e-8e2eb3c03471++2664"
+    }
+  ]
+}

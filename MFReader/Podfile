@@ -1,0 +1,19 @@
+platform:ios, '8.0'
+use_frameworks!
+target 'DZMeBookRead' do
+pod 'MJRefresh',  '3.1.12'
+pod 'MBProgressHUD', '0.9.2'
+pod 'Toast',  '3.1.0'
+pod 'SDWebImage',  '3.8.2'
+pod 'Reachability', '3.1.0'
+pod 'AFNetworking',  '3.1.0'
+pod 'MJExtension',  '3.0.13'
+pod 'UITextView+Placeholder',  '1.2.0'
+pod 'YYImage',  '1.0.4'
+pod 'UITableView+FDTemplateLayoutCell', '~> 1.5.beta'
+pod 'YYWebImage', '~> 1.0.5'
+pod 'SnapKit'
+pod 'WMPageController'
+pod 'LLCycleScrollView'
+pod 'Kingfisher'
+end
