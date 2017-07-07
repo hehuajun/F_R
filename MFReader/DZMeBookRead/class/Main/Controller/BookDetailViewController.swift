@@ -43,6 +43,9 @@ class BookDetailViewController: UIViewController{
     }
     func goContentVC() -> Void {
         readVC = HJReadPageController()
+        //更新此书的章节目录
+        
+        //下载章节目录，存储在本地
         MBProgressHUD.showMessage("本地文件第一次解析慢,以后就会秒进了")
         let fileURL = Bundle.main.url(forResource: "求魔", withExtension: "txt")
             HJReadParser.separateLocalURL(fileURL!) { [weak self] (isOK) in

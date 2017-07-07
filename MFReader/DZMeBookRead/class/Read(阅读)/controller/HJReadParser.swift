@@ -86,13 +86,12 @@ import UIKit
             
             return readChapterListModels
         }
-        
         // 有搜索解决
         if !results.isEmpty {
        
             var lastRange = NSMakeRange(0, 0)
             
-            // 便利
+            // 遍历书籍内容，生产章节集合，并归档
             for index in 0..<(results.count + 1) {
                 
                 let range = results[(index == results.count) ? (index - 1) : index].range
@@ -111,7 +110,7 @@ import UIKit
                     
                     readChapterModel.chapterName = "开始"
                     
-                    readChapterModel.chapterContent = repairsContent(content.substringWithRange(NSMakeRange(0, location)))
+                    readChapterModel.chapterContent = "hello world" //repairsContent(content.substringWithRange(NSMakeRange(0, location)))
                     
                     // 优先记录一遍
                     lastRange = range
@@ -123,13 +122,13 @@ import UIKit
                     
                     readChapterModel.chapterName = content.substringWithRange(lastRange)
                     
-                    readChapterModel.chapterContent = repairsContent(content.substringWithRange(NSMakeRange(lastRange.location, content.length - location)))
+                    readChapterModel.chapterContent =  "hello world" //repairsContent(content.substringWithRange(NSMakeRange(lastRange.location, content.length - location)))
                     
                 }else{ // 中间章节
                     
                     readChapterModel.chapterName = content.substringWithRange(lastRange)
                     
-                    readChapterModel.chapterContent = repairsContent(content.substringWithRange(NSMakeRange(lastRange.location, location - lastRange.location)))
+                    readChapterModel.chapterContent =  "hello world" //repairsContent(content.substringWithRange(NSMakeRange(lastRange.location, location - lastRange.location)))
                 }
                 
                 // 阅读章节list模型

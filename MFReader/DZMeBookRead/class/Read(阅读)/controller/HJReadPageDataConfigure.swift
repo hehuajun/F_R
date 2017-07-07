@@ -78,6 +78,8 @@ class HJReadPageDataConfigure: NSObject {
      */
     func GoToReadChapter(_ chapterID:String,chapterLookPageClear:Bool,result:((_ isOK:Bool)->Void)?) {
         
+        MBProgressHUD.showMessage("加载网络数据")
+        
         if !readPageController.readModel.readChapterListModels.isEmpty {
             
             let readChapterModel = GetReadChapterModel(chapterID)
@@ -93,7 +95,6 @@ class HJReadPageDataConfigure: NSObject {
                     if result != nil {result!(false)}
                     
                 }else{ // 网络小说
-                    
                 }
             }
         }
