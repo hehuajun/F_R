@@ -21,7 +21,9 @@ import UIKit
 
 @objc class HJReadParser: NSObject {
 
-    
+    class func reqChapterListWithBookID(id:Int,callback:(data:NSDictionary,error:Error)) {
+        
+    }
     // MARK: -- 解析文章字符串
     
     /**
@@ -110,7 +112,7 @@ import UIKit
                     
                     readChapterModel.chapterName = "开始"
                     
-                    readChapterModel.chapterContent = "hello world" //repairsContent(content.substringWithRange(NSMakeRange(0, location)))
+                    readChapterModel.chapterContent = repairsContent(content.substringWithRange(NSMakeRange(0, location)))
                     
                     // 优先记录一遍
                     lastRange = range
@@ -122,13 +124,13 @@ import UIKit
                     
                     readChapterModel.chapterName = content.substringWithRange(lastRange)
                     
-                    readChapterModel.chapterContent =  "hello world" //repairsContent(content.substringWithRange(NSMakeRange(lastRange.location, content.length - location)))
+                    readChapterModel.chapterContent =  repairsContent(content.substringWithRange(NSMakeRange(lastRange.location, content.length - location)))
                     
                 }else{ // 中间章节
                     
                     readChapterModel.chapterName = content.substringWithRange(lastRange)
                     
-                    readChapterModel.chapterContent =  "hello world" //repairsContent(content.substringWithRange(NSMakeRange(lastRange.location, location - lastRange.location)))
+                    readChapterModel.chapterContent =  repairsContent(content.substringWithRange(NSMakeRange(lastRange.location, location - lastRange.location)))
                 }
                 
                 // 阅读章节list模型

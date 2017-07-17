@@ -17,11 +17,11 @@ class MyCenterViewController: WMPageController{
         self.delegate = self
         self.dataSource = self
         self.menuViewLayoutMode = WMMenuViewLayoutMode.center
-        self.titleColorSelected = HJConst.kThemeColr
+        self.titleColorSelected = HJConst.kThemeColr!
         self.progressColor = HJConst.kThemeColr
         self.menuViewStyle = WMMenuViewStyle.line
         self.view.backgroundColor = UIColor.white
-        self.menuHeight = 44
+//        self.menuHeight = 44
         self.pageAnimatable = true
         self.menuItemWidth = HJConst.kScreenWidth/3;
         self.postNotification = true

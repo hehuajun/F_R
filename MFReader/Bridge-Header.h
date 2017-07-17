@@ -12,7 +12,7 @@
 #import "DZMCoverController.h"
 
 #import "MBProgressHUD.h"
-#import "AFNetworking.h"
+//#import "AFNetworking.h"
 #import "UIView+Toast.h"
 #import "MJRefresh.h"
 #import "YAScrollSegmentControl.h"

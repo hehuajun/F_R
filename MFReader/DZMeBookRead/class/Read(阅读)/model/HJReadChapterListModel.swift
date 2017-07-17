@@ -72,3 +72,9 @@ class HJReadChapterListModel: NSObject {
         aCoder.encode(price, forKey: "price")
     }
 }
+
+extension HJReadChapterListModel {
+    func reqChapterListWithBookID(id:Int,callback:()) -> Void {
+        
+    }
+}

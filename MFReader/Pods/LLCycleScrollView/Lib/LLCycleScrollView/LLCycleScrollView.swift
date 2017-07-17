@@ -83,6 +83,10 @@ public typealias LLdidSelectItemAtIndexClosure = (NSInteger) -> Void
         }
     }
     
+    // 背景色
+    @IBInspectable open var collectionViewBackgroundColor: UIColor! = UIColor.clear
+    
+    // MARK: 图片属性
     // 图片显示Mode
     open var imageViewContentMode: UIViewContentMode? {
         didSet {
@@ -90,7 +94,6 @@ public typealias LLdidSelectItemAtIndexClosure = (NSInteger) -> Void
         }
     }
     
-    // PageControlStyle
     // MARK: PageControl
     open var pageControlTintColor: UIColor = UIColor.lightGray {
         didSet {
@@ -117,7 +120,7 @@ public typealias LLdidSelectItemAtIndexClosure = (NSInteger) -> Void
             setupPageControl()
         }
     }
-    // 间距
+    // Indicator间距
     open var customPageControlIndicatorPadding: CGFloat = 8 {
         didSet {
             setupPageControl()
@@ -131,11 +134,28 @@ public typealias LLdidSelectItemAtIndexClosure = (NSInteger) -> Void
         }
     }
     
+    // PageControl x轴间距
     open var pageControlLeadingOrTrialingContact: CGFloat = 28 {
         didSet {
-            setupPageControl()
+            setNeedsDisplay()
         }
     }
+    
+    // PageControl bottom间距
+    open var pageControlBottom: CGFloat = 11 {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    
+    // PageControl x轴文本间距
+    open var titleLeading: CGFloat = 15
+    
+    // PageControl
+    open var pageControl: UIPageControl?
+    
+    // Custom PageControl
+    open var customPageControl: UIView?
     
     // PageControlStyle == .fill
     // 圆大小
@@ -153,9 +173,7 @@ public typealias LLdidSelectItemAtIndexClosure = (NSInteger) -> Void
         }
     }
     
-    // 背景色
-    @IBInspectable open var collectionViewBackgroundColor: UIColor! = UIColor.clear
-    
+    // MARK: 数据源
     // ImagePaths
     open var imagePaths: Array<String> = [] {
         didSet {
@@ -175,12 +193,34 @@ public typealias LLdidSelectItemAtIndexClosure = (NSInteger) -> Void
             }
             
             setupPageControl()
+            
             collectionView.reloadData()
         }
     }
     
+    // MARK: 间距属性
+    
+    
+    // MARK: 文本相关属性
+    // 文本颜色
+    open var textColor: UIColor = UIColor.white
+    
+    // 文本行数
+    open var numberOfLines: NSInteger = 2
+    
+    // 文本字体
+    open var font: UIFont = UIFont.systemFont(ofSize: 15)
+    
+    // 文本区域背景颜色
+    open var titleBackgroundColor: UIColor = UIColor.black.withAlphaComponent(0.3)
+    
+    // MARK: 标题数据源
     // 标题
     open var titles: Array<String> = []
+    
+    // MARK: 闭包
+    // 回调
+    open var lldidSelectItemAtIndex: LLdidSelectItemAtIndexClosure? = nil
     
     // MARK: Private
     // Identifier
@@ -207,6 +247,12 @@ public typealias LLdidSelectItemAtIndexClosure = (NSInteger) -> Void
     // 方向(swift后没有none，只能指定了)
     fileprivate var position: UICollectionViewScrollPosition! = .centeredHorizontally
     
+    // 是否纯文本
+    fileprivate var isOnlyTitle: Bool = false
+    
+    // Cell Height
+    fileprivate var cellHeight: CGFloat = 56
+    
     // FlowLayout
     lazy fileprivate var flowLayout: UICollectionViewFlowLayout? = {
         let tempFlowLayout = UICollectionViewFlowLayout.init()
@@ -218,34 +264,46 @@ public typealias LLdidSelectItemAtIndexClosure = (NSInteger) -> Void
     // 计时器
     fileprivate var timer: Timer?
     
-    // PageControl
-    open var pageControl: UIPageControl?
-    
-    open var customPageControl: UIView?
-    
     // 加载状态图
     fileprivate var placeHolderViewImage: UIImage! = UIImage.init(named: "LLCycleScrollView.bundle/llplaceholder.png")
     
     // 空数据页面显示占位图
     fileprivate var coverViewImage: UIImage! = UIImage.init(named: "LLCycleScrollView.bundle/llplaceholder.png")
     
-    // 回调
-    open var lldidSelectItemAtIndex: LLdidSelectItemAtIndexClosure? = nil
-    
-    
+    // MARK: Init
     override public init(frame: CGRect) {
         super.init(frame: frame)
         // setupMainView
         setupMainView()
     }
     
-    // Class func
-    open class func llCycleScrollViewWithFrame(_ frame: CGRect, imageURLPaths: Array<String>? = [], titles:Array<String>? = [], didSelectItemAtIndex: LLdidSelectItemAtIndexClosure? = nil) -> LLCycleScrollView {
+    // MARK: 初始化
+    open class func llCycleScrollViewWithFrame(_ frame: CGRect, imageURLPaths: Array<String>? = [], titles:Array<String>? = [],didSelectItemAtIndex: LLdidSelectItemAtIndexClosure? = nil) -> LLCycleScrollView {
         let llcycleScrollView: LLCycleScrollView = LLCycleScrollView.init(frame: frame)
+        
         if (imageURLPaths?.count)! > 0 {
             llcycleScrollView.imagePaths = imageURLPaths!
         }
         if (titles?.count)! > 0 {
+            llcycleScrollView.titles = titles!
+        }
+        if didSelectItemAtIndex != nil {
+            llcycleScrollView.lldidSelectItemAtIndex = didSelectItemAtIndex
+        }
+        return llcycleScrollView
+    }
+    
+    // MARK: 纯文本
+    open class func llCycleScrollViewWithTitles(frame: CGRect, titles: Array<String>? = [], didSelectItemAtIndex: LLdidSelectItemAtIndexClosure? = nil) -> LLCycleScrollView {
+        let llcycleScrollView: LLCycleScrollView = LLCycleScrollView.init(frame: frame)
+        // Set isOnlyTitle
+        llcycleScrollView.isOnlyTitle = true
+
+        // Cell Height
+        llcycleScrollView.cellHeight = frame.size.height
+        
+        if (titles?.count)! > 0 {
+            llcycleScrollView.imagePaths = titles!
             llcycleScrollView.titles = titles!
         }
         if didSelectItemAtIndex != nil {
@@ -261,9 +319,9 @@ public typealias LLdidSelectItemAtIndexClosure = (NSInteger) -> Void
         setupMainView()
     }
     
-    // MARK: setupMainView
+    // MARK: 添加UICollectionView
     private func setupMainView() {
-        collectionView = UICollectionView.init(frame: self.bounds, collectionViewLayout: flowLayout!)
+        collectionView = UICollectionView.init(frame: CGRect.zero, collectionViewLayout: flowLayout!)
         collectionView.register(LLCycleScrollViewCell.self, forCellWithReuseIdentifier: identifier)
         collectionView.backgroundColor = collectionViewBackgroundColor
         collectionView.isPagingEnabled = true
@@ -275,12 +333,13 @@ public typealias LLdidSelectItemAtIndexClosure = (NSInteger) -> Void
         self.addSubview(collectionView)
     }
     
-    // MARK: Timer
+    // MARK: 添加Timer
     func setupTimer() {
         timer = Timer.scheduledTimer(timeInterval: autoScrollTimeInterval as TimeInterval, target: self, selector: #selector(automaticScroll), userInfo: nil, repeats: true)
         RunLoop.main.add(timer!, forMode: .commonModes)
     }
     
+    // MARK: 关闭倒计时
     func invalidateTimer() {
         if timer != nil {
             timer?.invalidate()
@@ -288,6 +347,7 @@ public typealias LLdidSelectItemAtIndexClosure = (NSInteger) -> Void
         }
     }
     
+    // MARK: 添加PageControl
     func setupPageControl() {
         // 重新添加
         if pageControl != nil {
@@ -343,22 +403,24 @@ public typealias LLdidSelectItemAtIndexClosure = (NSInteger) -> Void
     // MARK: layoutSubviews
     override open func layoutSubviews() {
         super.layoutSubviews()
+        // CollectionView
+        collectionView.frame = self.bounds
         // Cell Size
         flowLayout?.itemSize = self.frame.size
         // Page Frame
         if customPageControlStyle == .none || customPageControlStyle == .system {
             if pageControlPosition == .center {
-                pageControl?.frame = CGRect.init(x: 0, y: self.ll_h-11, width: UIScreen.main.bounds.width, height: 10)
+                pageControl?.frame = CGRect.init(x: 0, y: self.ll_h-pageControlBottom, width: UIScreen.main.bounds.width, height: 10)
             }else{
                 let pointSize = pageControl?.size(forNumberOfPages: self.imagePaths.count)
                 if pageControlPosition == .left {
-                    pageControl?.frame = CGRect.init(x: -(UIScreen.main.bounds.width - (pointSize?.width)! - pageControlLeadingOrTrialingContact) * 0.5, y: self.ll_h-11, width: UIScreen.main.bounds.width, height: 10)
+                    pageControl?.frame = CGRect.init(x: -(UIScreen.main.bounds.width - (pointSize?.width)! - pageControlLeadingOrTrialingContact) * 0.5, y: self.ll_h-pageControlBottom, width: UIScreen.main.bounds.width, height: 10)
                 }else{
-                    pageControl?.frame = CGRect.init(x: (UIScreen.main.bounds.width - (pointSize?.width)! - pageControlLeadingOrTrialingContact) * 0.5, y: self.ll_h-11, width: UIScreen.main.bounds.width, height: 10)
+                    pageControl?.frame = CGRect.init(x: (UIScreen.main.bounds.width - (pointSize?.width)! - pageControlLeadingOrTrialingContact) * 0.5, y: self.ll_h-pageControlBottom, width: UIScreen.main.bounds.width, height: 10)
                 }
             }
         }else{
-            var y = self.ll_h-10-1
+            var y = self.ll_h-pageControlBottom
             // pill
             if customPageControlStyle == .pill {
                 y+=5
@@ -418,39 +480,56 @@ public typealias LLdidSelectItemAtIndexClosure = (NSInteger) -> Void
     
     open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: LLCycleScrollViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! LLCycleScrollViewCell
+        // Setting
+        cell.titleFont = font
+        cell.titleLabelTextColor = textColor
+        cell.titleBackViewBackgroundColor = titleBackgroundColor
+        cell.titleLines = numberOfLines
         
-        // 0==count 占位图
-        if imagePaths.count == 0 {
-            cell.imageView.image = coverViewImage
-        }else{
+        // Leading
+        cell.titleLabelLeading = titleLeading
+        
+        // Only Title
+        if isOnlyTitle && titles.count > 0{
+            cell.titleLabelHeight = cellHeight
+            
             let itemIndex = pageControlIndexWithCurrentCellIndex(index: indexPath.item)
-            let imagePath = imagePaths[itemIndex]
-            // Mode
-            if let imageViewContentMode = imageViewContentMode {
-                cell.imageView.contentMode = imageViewContentMode
-            }
-            
-            // 根据imagePath，来判断是网络图片还是本地图
-            if imagePath.hasPrefix("http") {
-                cell.imageView.kf.setImage(with: URL(string: imagePath), placeholder: placeHolderImage)
+            cell.title = titles[itemIndex]
+        }else{
+            // 0==count 占位图
+            if imagePaths.count == 0 {
+                cell.imageView.image = coverViewImage
             }else{
-                if let image = UIImage.init(named: imagePath) {
-                    cell.imageView.image = image;
-                }else{
-                    cell.imageView.image = UIImage.init(contentsOfFile: imagePath)
+                let itemIndex = pageControlIndexWithCurrentCellIndex(index: indexPath.item)
+                let imagePath = imagePaths[itemIndex]
+                // Mode
+                if let imageViewContentMode = imageViewContentMode {
+                    cell.imageView.contentMode = imageViewContentMode
                 }
-            }
-            
-            // 对冲数据判断
-            if itemIndex <= titles.count-1 {
-                cell.title = titles[itemIndex]
-            }else{
-                cell.title = ""
+                
+                // 根据imagePath，来判断是网络图片还是本地图
+                if imagePath.hasPrefix("http") {
+                    cell.imageView.kf.setImage(with: URL(string: imagePath), placeholder: placeHolderImage)
+                }else{
+                    if let image = UIImage.init(named: imagePath) {
+                        cell.imageView.image = image;
+                    }else{
+                        cell.imageView.image = UIImage.init(contentsOfFile: imagePath)
+                    }
+                }
+                
+                // 对冲数据判断
+                if itemIndex <= titles.count-1 {
+                    cell.title = titles[itemIndex]
+                }else{
+                    cell.title = ""
+                }
             }
         }
         return cell
     }
     
+    // MARK: UICollectionViewDelegate
     open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let didSelectItemAtIndexPath = lldidSelectItemAtIndex {
             didSelectItemAtIndexPath(pageControlIndexWithCurrentCellIndex(index: indexPath.item))
@@ -513,12 +592,14 @@ public typealias LLdidSelectItemAtIndexClosure = (NSInteger) -> Void
         
     }
     
+    // MARK: ScrollView Begin Drag
     open func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         if autoScroll! {
             invalidateTimer()
         }
     }
     
+    // MARK: ScrollView End Drag
     open func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if autoScroll! {
             setupTimer()

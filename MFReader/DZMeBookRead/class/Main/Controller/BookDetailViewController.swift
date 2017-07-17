@@ -42,6 +42,14 @@ class BookDetailViewController: UIViewController{
         self.goContentVC()
     }
     func goContentVC() -> Void {
+        
+        //判断本地是否存在这本书的相关目录
+        
+        //如果存在，则直接进入阅读器中进行阅读，同时更新本地的目录列表
+        
+        //如果不存在，则从服务器上拉取目录列表，然后再进入阅读器
+        
+        
         readVC = HJReadPageController()
         //更新此书的章节目录
         

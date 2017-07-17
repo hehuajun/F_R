@@ -17,10 +17,11 @@ class BookCityViewController: WMPageController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewFrame = CGRect(x: 0, y: bannerHeight, width: HJConst.kScreenWidth, height: HJConst.kScreenHeight - bannerHeight - 49)
+        
+//        self.viewFrame = CGRect(x: 0, y: bannerHeight, width: HJConst.kScreenWidth, height: HJConst.kScreenHeight - bannerHeight - 49)
         self.menuViewLayoutMode = WMMenuViewLayoutMode.center;
         self.menuViewStyle = WMMenuViewStyle.line                //设置需要靠前，放到其他属性后面进行设置，容易被遮挡
-        self.menuHeight = 44;
+//        self.menuHeight = 44;
         self.delegate = self
         self.dataSource = self
         self.pageAnimatable = true
@@ -72,7 +73,9 @@ class BookCityViewController: WMPageController {
 //        return navVC
 //    }
     
-    
+    override func pageController(_ pageController: WMPageController, preferredFrameFor menuView: WMMenuView) -> CGRect {
+        return CGRect(x: 0, y: bannerHeight, width: HJConst.kScreenWidth, height: 49)
+    }
     // MARK: -- WMPageControllerDelegate
     override func pageController(_ pageController: WMPageController, didEnter viewController: UIViewController, withInfo info: [AnyHashable : Any]) {
         print("hello")
