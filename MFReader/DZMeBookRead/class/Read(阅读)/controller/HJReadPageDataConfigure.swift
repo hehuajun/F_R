@@ -78,7 +78,7 @@ class HJReadPageDataConfigure: NSObject {
      */
     func GoToReadChapter(_ chapterID:String,chapterLookPageClear:Bool,result:((_ isOK:Bool)->Void)?) {
         
-        MBProgressHUD.showMessage("加载网络数据")
+//        MBProgressHUD.showMessage("加载网络数据")
         
         if !readPageController.readModel.readChapterListModels.isEmpty {
             
@@ -139,6 +139,14 @@ class HJReadPageDataConfigure: NSObject {
         return results.first as? HJReadChapterListModel
     }
     
+    func UpdateReadChapterContent(content:String,chapterID:String) -> HJReadChapterModel? {
+        let model = GetReadChapterModel(chapterID)
+        if  model != nil {
+            model?.chapterContent = content
+            model?.updateFont()
+        }
+        return model
+    }
     
     // 通过章节ID获取章节模型 需要滚动到的 获取到阅读章节
     func GetReadChapterModel(_ chapterID:String) ->HJReadChapterModel? {
@@ -233,8 +241,9 @@ class HJReadPageDataConfigure: NSObject {
         changeLookPage = readPageController.readModel.readRecord.page.intValue
         
         changeReadChapterListModel = readPageController.readModel.readRecord.readChapterListModel
+//        let cm = readPageController.readConfigure.GetReadChapterModel(<#T##chapterID: String##String#>)
         
-        if readPageController.readModel.isLocalBook.boolValue { // 本地小说
+        if readPageController.readModel.isLocalBook.boolValue{ // 本地小说
             
             if changeChapterID == readPageController.readModel.readChapterListModels.count && changeLookPage == (changeReadChapterModel.pageCount.intValue - 1) {
                 
@@ -263,7 +272,30 @@ class HJReadPageDataConfigure: NSObject {
             
         }else{ // 网络小说阅读
             
+            if changeChapterID == readPageController.readModel.readChapterListModels.count && changeLookPage == (changeReadChapterModel.pageCount.intValue - 1) {
+                
+                return nil
+            }
             
+            if changeLookPage == (changeReadChapterModel.pageCount.intValue - 1) { // 这一章到尾部了
+                
+                changeChapterID += 1
+                
+                let chapterModel = GetReadChapterModel("\(changeChapterID)")
+                
+                if chapterModel != nil { // 有下一章
+                    
+                    changeLookPage = 0
+                    
+                }else{ // 没有下一章
+                    
+                    return nil
+                }
+                
+            }else{
+                
+                changeLookPage += 1
+            }
         }
         
         return GetReadViewController(changeReadChapterModel, currentPage: changeLookPage)

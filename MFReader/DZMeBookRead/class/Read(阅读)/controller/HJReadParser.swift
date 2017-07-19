@@ -125,12 +125,13 @@ import UIKit
                     readChapterModel.chapterName = content.substringWithRange(lastRange)
                     
                     readChapterModel.chapterContent =  repairsContent(content.substringWithRange(NSMakeRange(lastRange.location, content.length - location)))
+                    readChapterModel.chapterContent =  repairsContent(content.substringWithRange(NSMakeRange(lastRange.location + lastRange.length, content.length - location - lastRange.length)))
                     
                 }else{ // 中间章节
                     
                     readChapterModel.chapterName = content.substringWithRange(lastRange)
                     
-                    readChapterModel.chapterContent =  repairsContent(content.substringWithRange(NSMakeRange(lastRange.location, location - lastRange.location)))
+                    readChapterModel.chapterContent =  repairsContent(content.substringWithRange(NSMakeRange(lastRange.location + lastRange.length, location - lastRange.location - lastRange.length)))
                 }
                 
                 // 阅读章节list模型
@@ -140,7 +141,6 @@ import UIKit
                 
                 // 归档阅读文件
                 ReadKeyedArchiver(bookID, fileName: readChapterModel.chapterID, object: readChapterModel)
-                
                 lastRange = range
             }
             
@@ -165,14 +165,13 @@ import UIKit
             ReadKeyedArchiver(bookID, fileName: readChapterModel.chapterID, object: readChapterModel)
             
         }
-        
         return readChapterListModels
     }
     
     /// 修整字符串
     class func repairsContent(_ content:String) ->String {
         
-        var str = content as NSString;
+        var str = content.trimmingCharacters(in: .whitespacesAndNewlines) as NSString;
         
         let spaceStr = "    "
         

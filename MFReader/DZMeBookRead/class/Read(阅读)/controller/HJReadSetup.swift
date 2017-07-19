@@ -181,10 +181,25 @@ class HJReadSetup: NSObject,UIGestureRecognizerDelegate,HJReadSettingColorViewDe
     // MARK: -- HJReadLeftViewDelegate
     
     func readLeftView(_ readLeftView: HJReadLeftView, clickReadChapterModel model: HJReadChapterListModel, chapterLookPageClear: Bool) {
+        var chapterModel = readPageController.readConfigure.GetReadChapterModel(model.chapterID)
         
-        setFlipEffect(HJReadConfigureManger.shareManager.flipEffect,chapterID: model.chapterID,chapterLookPageClear: chapterLookPageClear,contentOffsetYClear: true)
-        
-        RFHidden(!isRFHidden)
+        if chapterModel?.chapterContent.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            let hud = MBProgressHUD.showMessage("请求章节数据", to: readPageController.view)
+            HJReadDataManager.reqChapterContent(withChapterID: (chapterModel?.chapterID)!, bookID: self.readPageController.readModel.bookID, callback: { [weak self](content) in
+                hud.hide(true)
+               chapterModel = self?.readPageController.readConfigure.UpdateReadChapterContent(content: content, chapterID: model.chapterID)
+                
+                ReadKeyedArchiver((self?.readPageController.readModel.bookID)!, fileName: (chapterModel?.chapterID)!, object: chapterModel!)
+                
+                self?.setFlipEffect(HJReadConfigureManger.shareManager.flipEffect,chapterID: model.chapterID,chapterLookPageClear: chapterLookPageClear,contentOffsetYClear: true)
+                
+                self?.RFHidden((self?.isRFHidden)!)
+            })
+        }else{
+            setFlipEffect(HJReadConfigureManger.shareManager.flipEffect,chapterID: model.chapterID,chapterLookPageClear: chapterLookPageClear,contentOffsetYClear: true)
+            
+            RFHidden(!isRFHidden)
+        }
     }
     
     // MARK: -- HJReadSettingColorViewDelegate

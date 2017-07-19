@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B1E84D91F1C96D4001DD823 /* mdjyml的副本.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3B1E84D81F1C96D4001DD823 /* mdjyml的副本.txt */; };
+		3B1E84DB1F1DFE16001DD823 /* HJReadDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1E84DA1F1DFE16001DD823 /* HJReadDataManager.swift */; };
 		3BE00E371F0E163300239A79 /* BookInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE00E351F0E163300239A79 /* BookInfoCell.swift */; };
 		3BE00E381F0E163300239A79 /* BookInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BE00E361F0E163300239A79 /* BookInfoCell.xib */; };
 		3BE00E3B1F0E177400239A79 /* MasterDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE00E391F0E177400239A79 /* MasterDetailCell.swift */; };
@@ -132,6 +134,8 @@
 /* Begin PBXFileReference section */
 		0F9FFE67DC8FD9DA71EF0953 /* Pods_DZMeBookRead.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DZMeBookRead.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DD7E0630460014C2513539F /* Pods-DZMeBookRead.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DZMeBookRead.release.xcconfig"; path = "Pods/Target Support Files/Pods-DZMeBookRead/Pods-DZMeBookRead.release.xcconfig"; sourceTree = "<group>"; };
+		3B1E84D81F1C96D4001DD823 /* mdjyml的副本.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "mdjyml的副本.txt"; sourceTree = "<group>"; };
+		3B1E84DA1F1DFE16001DD823 /* HJReadDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HJReadDataManager.swift; sourceTree = "<group>"; };
 		3BE00E351F0E163300239A79 /* BookInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookInfoCell.swift; sourceTree = "<group>"; };
 		3BE00E361F0E163300239A79 /* BookInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookInfoCell.xib; sourceTree = "<group>"; };
 		3BE00E391F0E177400239A79 /* MasterDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterDetailCell.swift; sourceTree = "<group>"; };
@@ -437,6 +441,7 @@
 				AF2959141D7BB33700C880E7 /* HJReadParser.swift */,
 				AF2959151D7BB33700C880E7 /* HJReadSetup.swift */,
 				AF2959161D7BB33700C880E7 /* HJReadUI.swift */,
+				3B1E84DA1F1DFE16001DD823 /* HJReadDataManager.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -514,6 +519,7 @@
 			children = (
 				AFA682B11D76D31800870EBF /* class */,
 				AF69654D1D76CF1C005FF098 /* 求魔.txt */,
+				3B1E84D81F1C96D4001DD823 /* mdjyml的副本.txt */,
 				AF69654E1D76CF1C005FF098 /* mdjyml.txt */,
 			);
 			path = DZMeBookRead;
@@ -773,6 +779,7 @@
 				3BE00E381F0E163300239A79 /* BookInfoCell.xib in Resources */,
 				7EEADC8E1E305BB300005778 /* 设置(1)@2x.png in Resources */,
 				7EEADC8D1E305BB300005778 /* 小说@2x.png in Resources */,
+				3B1E84D91F1C96D4001DD823 /* mdjyml的副本.txt in Resources */,
 				7EEADC931E305D7A00005778 /* 主页(1)@2x.png in Resources */,
 				7E18B22F1E2F0934008C71A8 /* Storyboard.storyboard in Resources */,
 				7E90E5AF1E7F81C00069677E /* CollectionView.xib in Resources */,
@@ -856,6 +863,7 @@
 				AF8E56261DE584910079029F /* HJReadLeftBookMarkCell.swift in Sources */,
 				AF2959421D7BB33700C880E7 /* HJReadSettingCustomView.swift in Sources */,
 				7E41F6CC1E7FC45500E46F7E /* BookCityViewController.swift in Sources */,
+				3B1E84DB1F1DFE16001DD823 /* HJReadDataManager.swift in Sources */,
 				AF3742AE1DB7122E00E448DC /* HJReadTopStatusView.swift in Sources */,
 				7E451F151E8F598B003482BF /* TBLAllSaw.swift in Sources */,
 				AF29592E1D7BB33700C880E7 /* HJReadConfigureManger.swift in Sources */,
