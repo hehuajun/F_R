@@ -144,6 +144,8 @@ class HJReadPageDataConfigure: NSObject {
         if  model != nil {
             model?.chapterContent = content
             model?.updateFont()
+            let lm = GetReadChapterListModel(chapterID)
+            lm?.isDownload = true
         }
         return model
     }
@@ -197,7 +199,7 @@ class HJReadPageDataConfigure: NSObject {
         
         changeReadChapterListModel = readPageController.readModel.readRecord.readChapterListModel
         
-        if readPageController.readModel.isLocalBook.boolValue { // 本地小说
+        if readPageController.readModel.isLocalBook.boolValue || changeReadChapterListModel.isDownload == true{ // 本地小说
             
             if changeChapterID == 1 && changeLookPage == 0 {
                 
@@ -231,7 +233,49 @@ class HJReadPageDataConfigure: NSObject {
         
         return GetReadViewController(changeReadChapterModel, currentPage: changeLookPage)
     }
+    // MARK: -- 上一页
     
+    func GetReadPreviousPage(callback:(HJReadViewController?) -> ()) -> () {
+        
+        changeChapterID = readPageController.readModel.readRecord.readChapterListModel.chapterID.integerValue()
+        
+        changeLookPage = readPageController.readModel.readRecord.page.intValue
+        
+        changeReadChapterListModel = readPageController.readModel.readRecord.readChapterListModel
+        
+        if readPageController.readModel.isLocalBook.boolValue || changeReadChapterListModel.isDownload == true{ // 本地小说
+            
+            if changeChapterID == 1 && changeLookPage == 0 {
+                callback(nil)
+            }
+            
+            if changeLookPage == 0 { // 这一章到头部了
+                
+                changeChapterID -= 1
+                
+                let readChapterModel = GetReadChapterModel("\(changeChapterID)")
+                
+                if readChapterModel != nil { // 有上一张
+                    
+                    changeLookPage = changeReadChapterModel!.pageCount.intValue - 1
+                    
+                }else{ // 没有上一章
+                    
+                    callback(nil)
+                }
+                
+            }else{
+                
+                changeLookPage -= 1
+            }
+            
+        }else{ // 网络小说阅读
+            
+            
+        }
+        
+        callback(GetReadViewController(changeReadChapterModel, currentPage: changeLookPage))
+    }
     // MARK: -- 下一页
     
     func GetReadNextPage() ->HJReadViewController? {
@@ -241,9 +285,8 @@ class HJReadPageDataConfigure: NSObject {
         changeLookPage = readPageController.readModel.readRecord.page.intValue
         
         changeReadChapterListModel = readPageController.readModel.readRecord.readChapterListModel
-//        let cm = readPageController.readConfigure.GetReadChapterModel(<#T##chapterID: String##String#>)
-        
-        if readPageController.readModel.isLocalBook.boolValue{ // 本地小说
+
+        if readPageController.readModel.isLocalBook.boolValue || changeReadChapterListModel.isDownload == true{ // 本地小说
             
             if changeChapterID == readPageController.readModel.readChapterListModels.count && changeLookPage == (changeReadChapterModel.pageCount.intValue - 1) {
                 
@@ -272,9 +315,25 @@ class HJReadPageDataConfigure: NSObject {
             
         }else{ // 网络小说阅读
             
+            
+        }
+        
+        return GetReadViewController(changeReadChapterModel, currentPage: changeLookPage)
+    }
+    // MARK: -- 下一页
+    
+    func GetReadNextPage(callback:(HJReadViewController?) -> Void ) -> Void {
+        
+        changeChapterID = readPageController.readModel.readRecord.readChapterListModel.chapterID.integerValue()
+        
+        changeLookPage = readPageController.readModel.readRecord.page.intValue
+        
+        changeReadChapterListModel = readPageController.readModel.readRecord.readChapterListModel
+        
+        if readPageController.readModel.isLocalBook.boolValue || changeReadChapterListModel.isDownload == true{ // 本地小说
+            
             if changeChapterID == readPageController.readModel.readChapterListModels.count && changeLookPage == (changeReadChapterModel.pageCount.intValue - 1) {
-                //阅读完毕
-                return nil
+                callback(nil)
             }
             
             if changeLookPage == (changeReadChapterModel.pageCount.intValue - 1) { // 这一章到尾部了
@@ -288,19 +347,20 @@ class HJReadPageDataConfigure: NSObject {
                     changeLookPage = 0
                     
                 }else{ // 没有下一章
-                    //阅读完毕？
-                    return nil
+                    callback(nil)
                 }
                 
             }else{
-                
                 changeLookPage += 1
             }
+            
+        }else{ // 网络小说阅读
+            
+            
         }
         
-        return GetReadViewController(changeReadChapterModel, currentPage: changeLookPage)
+        callback(GetReadViewController(changeReadChapterModel, currentPage: changeLookPage))
     }
-    
     // MARK: -- 刷新字体
     
     func updateReadRecordFont() {

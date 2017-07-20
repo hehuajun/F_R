@@ -48,6 +48,13 @@ class HJReadViewController: HJTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.refresh()
+        
+        // 通知在deinit 中会释放
+        // 添加背景颜色改变通知
+        NotificationCenter.default.addObserver(self, selector: #selector(HJReadViewController.changeBGColor), name: NSNotification.Name(rawValue: HJReadChangeBGColorKey), object: nil)
+    }
+    func refresh() {
         // 设置背景颜色
         changeBGColor()
         
@@ -59,12 +66,11 @@ class HJReadViewController: HJTableViewController {
         readPageController.readSetup.readUI.bottomView.slider.value = readRecord.page.floatValue
         readTopStatusView.setLeftTitle(readChapterModel.chapterName)
         readBottomStatusView.setNumberPage(readRecord.page.intValue, tatolPage: readChapterModel.pageCount.intValue)
-        
-        // 通知在deinit 中会释放
-        // 添加背景颜色改变通知
-        NotificationCenter.default.addObserver(self, selector: #selector(HJReadViewController.changeBGColor), name: NSNotification.Name(rawValue: HJReadChangeBGColorKey), object: nil)
     }
-    
+    open func RefreshView(){
+        self.refresh()
+        self.tableView.reloadData()
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
