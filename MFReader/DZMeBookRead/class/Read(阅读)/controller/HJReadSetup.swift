@@ -101,10 +101,30 @@ class HJReadSetup: NSObject,UIGestureRecognizerDelegate,HJReadSettingColorViewDe
                 
                 if nextPageVC != nil { // 有下一页
                     
-                    readPageController.coverController.setController(nextPageVC!, animated: (HJReadConfigureManger.shareManager.flipEffect.rawValue != 0), isAbove: false)
-                    
-                    // 记录
-                    readPageController.readConfigure.synchronizationChangeData()
+                    if readPageController.readModel.readRecord.readChapterListModel.chapterID != nextPageVC?.readRecord.readChapterListModel.chapterID{
+                        print("下一章了")
+                        if nextPageVC?.readChapterModel.chapterContent.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+                            print("本章内容为空，需要从网络加载，完成以后修改download标志位")
+                            let hud = MBProgressHUD.showMessage("请求章节数据", to: readPageController.view)
+                            HJReadDataManager.reqChapterContent(withChapterID: (nextPageVC?.readRecord.readChapterListModel.chapterID)!, bookID: self.readPageController.readModel.bookID, callback: { [weak self](content) in
+                                hud.hide(true)
+                                let cm = self?.readPageController.readConfigure.UpdateReadChapterContent(content: content, chapterID: (nextPageVC?.readChapterModel.chapterID)!)
+
+                                ReadKeyedArchiver((self?.readPageController.readModel.bookID)!, fileName: (nextPageVC?.readChapterModel?.chapterID)!, object: (nextPageVC?.readChapterModel)!)
+                                nextPageVC?.content = cm?.chapterContent
+                                nextPageVC?.readRecord = self?.readPageController.readModel.readRecord
+                                nextPageVC?.readChapterModel = cm
+                                // 记录
+                                self?.readPageController.coverController.setController(nextPageVC!, animated: (HJReadConfigureManger.shareManager.flipEffect.rawValue != 0), isAbove: false)
+                                self?.readPageController.readConfigure.synchronizationChangeData()
+                            })
+                        }
+                    }else{
+                        readPageController.coverController.setController(nextPageVC!, animated: (HJReadConfigureManger.shareManager.flipEffect.rawValue != 0), isAbove: false)
+                        
+                        // 记录
+                        readPageController.readConfigure.synchronizationChangeData()
+                    }
                 }
                 
             }else{ // 中间

@@ -273,7 +273,7 @@ class HJReadPageDataConfigure: NSObject {
         }else{ // 网络小说阅读
             
             if changeChapterID == readPageController.readModel.readChapterListModels.count && changeLookPage == (changeReadChapterModel.pageCount.intValue - 1) {
-                
+                //阅读完毕
                 return nil
             }
             
@@ -288,7 +288,7 @@ class HJReadPageDataConfigure: NSObject {
                     changeLookPage = 0
                     
                 }else{ // 没有下一章
-                    
+                    //阅读完毕？
                     return nil
                 }
                 
