@@ -130,51 +130,30 @@ import UIKit
             readConfigure.synchronizationChangeData()
         }
     }
-    
+    func reqData(vc:HJReadViewController?){
+        if  vc?.content.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
+            let hud = MBProgressHUD.showMessage("加载数据中...", to: self.view.window)
+            HJReadDataManager.reqChapterContent(withChapterID: (vc?.readChapterModel.chapterID)!, bookID: (vc?.readPageController.readModel.bookID)!, callback: { (rs) in
+                hud.hide(true)
+                vc?.content = rs
+                vc?.readChapterModel.chapterContent = rs
+                _ = vc?.readPageController.readConfigure.UpdateReadChapterContent(content: (vc?.content)!, chapterID: (vc?.readChapterModel.chapterID)!)
+                vc?.readRecord = vc?.readPageController.readModel.readRecord
+                vc?.readRecord.readChapterModel?.updateFont()
+                vc?.RefreshView()
+                vc?.GetCurrentPage()
+            })
+        }
+    }
     func coverController(_ coverController: DZMCoverController, getAboveControllerWithCurrentController currentController: UIViewController?) -> UIViewController? {
         let vc :HJReadViewController? = readConfigure.GetReadPreviousPage()
-        if  vc?.content.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
-            let hud = MBProgressHUD.showMessage("加载数据中...", to: self.view)
-            DispatchQueue.global().async {
-                // code
-                sleep(1)
-                DispatchQueue.main.async {
-                    hud.hide(true)
-                    vc?.content = "和怒et vc :Hller? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJRea.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()dwa错"
-                    vc?.readChapterModel.chapterContent = vc?.content
-                    _ = vc?.readPageController.readConfigure.UpdateReadChapterContent(content: (vc?.content)!, chapterID: (vc?.readChapterModel.chapterID)!)
-                    vc?.readRecord = vc?.readPageController.readModel.readRecord
-                    vc?.readRecord.readChapterModel?.updateFont()
-                    vc?.RefreshView()
-                    vc?.GetCurrentPage()
-
-                }
-            }
-        }
+        self.reqData(vc: vc)
         return vc
     }
     
     func coverController(_ coverController: DZMCoverController, getBelowControllerWithCurrentController currentController: UIViewController?) -> UIViewController? {
-        
-        
         let vc :HJReadViewController? = readConfigure.GetReadNextPage()
-        if  vc?.content.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
-            let hud = MBProgressHUD.showMessage("加载数据中...", to: self.view)
-            DispatchQueue.global().async {
-                // code
-                sleep(1)
-                DispatchQueue.main.async {
-                    hud.hide(true)
-                    vc?.content = "和怒et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()et vc :HJReadViewController? = readConfigure.GetReadNextPage()dwa错"
-                    vc?.readChapterModel.chapterContent = vc?.content
-                    vc?.readPageController.readConfigure.UpdateReadChapterContent(content: (vc?.content)!, chapterID: (vc?.readChapterModel.chapterID)!)
-                    vc?.readRecord = vc?.readPageController.readModel.readRecord
-                    vc?.readRecord.readChapterModel?.updateFont()
-                    vc?.RefreshView()
-                    vc?.GetCurrentPage()
-                }
-            }
-        }
+        self.reqData(vc: vc)
         return vc
     }
     

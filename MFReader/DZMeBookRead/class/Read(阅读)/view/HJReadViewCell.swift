@@ -49,6 +49,7 @@ class HJReadViewCell: UITableViewCell {
     }
     
     
+    
     // 章节数据
     var readChapterModel:HJReadChapterModel? {
         
