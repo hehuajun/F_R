@@ -137,9 +137,10 @@ import UIKit
                 hud.hide(true)
                 vc?.content = rs
                 vc?.readChapterModel.chapterContent = rs
-                _ = vc?.readPageController.readConfigure.UpdateReadChapterContent(content: (vc?.content)!, chapterID: (vc?.readChapterModel.chapterID)!)
-                vc?.readRecord = vc?.readPageController.readModel.readRecord
+                vc?.readChapterModel.updateFont()
                 vc?.readRecord.readChapterModel?.updateFont()
+                _ = vc?.readPageController.readConfigure.UpdateReadChapterContent(content: (vc?.content)!, chapterID: (vc?.readChapterModel.chapterID)!)
+//                vc?.readRecord = vc?.readPageController.readModel.readRecord
                 vc?.RefreshView()
                 vc?.GetCurrentPage()
             })
@@ -147,13 +148,42 @@ import UIKit
     }
     func coverController(_ coverController: DZMCoverController, getAboveControllerWithCurrentController currentController: UIViewController?) -> UIViewController? {
         let vc :HJReadViewController? = readConfigure.GetReadPreviousPage()
-        self.reqData(vc: vc)
+        if  vc?.content.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
+            let hud = MBProgressHUD.showMessage("加载数据中...", to: self.view.window)
+            HJReadDataManager.reqChapterContent(withChapterID: (vc?.readChapterModel.chapterID)!, bookID: (vc?.readPageController.readModel.bookID)!, callback: { (rs) in
+                hud.hide(true)
+                vc?.readChapterModel.chapterContent = rs
+                vc?.readChapterModel.updateFont()
+                vc?.readRecord.readChapterModel?.updateFont()
+                vc?.readRecord.page = (vc?.readChapterModel.pageCount)!
+                vc?.readPageController.readConfigure.changeLookPage = (vc?.readChapterModel.pageCount.intValue)! - 1
+                vc?.isLastPage = true
+                vc?.content = vc?.readChapterModel.stringOfPage((vc?.readRecord.page.intValue)! - 1)
+                
+                vc?.GetCurrentPage()
+                vc?.RefreshView()
+            })
+        }
         return vc
     }
     
     func coverController(_ coverController: DZMCoverController, getBelowControllerWithCurrentController currentController: UIViewController?) -> UIViewController? {
         let vc :HJReadViewController? = readConfigure.GetReadNextPage()
-        self.reqData(vc: vc)
+        if  vc?.content.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
+            let hud = MBProgressHUD.showMessage("加载数据中...", to: self.view.window)
+            HJReadDataManager.reqChapterContent(withChapterID: (vc?.readChapterModel.chapterID)!, bookID: (vc?.readPageController.readModel.bookID)!, callback: { (rs) in
+                hud.hide(true)
+                vc?.content = rs
+                vc?.readChapterModel.chapterContent = rs
+                vc?.readChapterModel.updateFont()
+                vc?.readRecord.readChapterModel?.updateFont()
+                _ = vc?.readPageController.readConfigure.UpdateReadChapterContent(content: (vc?.content)!, chapterID: (vc?.readChapterModel.chapterID)!)
+                //                vc?.readRecord = vc?.readPageController.readModel.readRecord
+                vc?.RefreshView()
+                vc?.GetCurrentPage()
+            })
+        }
+
         return vc
     }
     

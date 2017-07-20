@@ -93,22 +93,29 @@ class HJReadSetup: NSObject,UIGestureRecognizerDelegate,HJReadSettingColorViewDe
                             let hud = MBProgressHUD.showMessage("请求章节数据", to: readPageController.view)
                             HJReadDataManager.reqChapterContent(withChapterID: (previousPageVC?.readRecord.readChapterListModel.chapterID)!, bookID: self.readPageController.readModel.bookID, callback: { [weak self](content) in
                                 hud.hide(true)
-                                let cm = self?.readPageController.readConfigure.UpdateReadChapterContent(content: content, chapterID: (previousPageVC?.readChapterModel.chapterID)!)
-                                
-                                ReadKeyedArchiver((self?.readPageController.readModel.bookID)!, fileName: (previousPageVC?.readChapterModel?.chapterID)!, object: (previousPageVC?.readChapterModel)!)
-                                previousPageVC?.content = cm?.chapterContent
-                                previousPageVC?.readRecord = self?.readPageController.readModel.readRecord
-                                previousPageVC?.readChapterModel = cm
+                                previousPageVC?.readChapterModel.chapterContent = content
+                                previousPageVC?.readChapterModel.updateFont()
+                                previousPageVC?.readRecord.readChapterModel?.updateFont()
+                                previousPageVC?.readRecord.page = (previousPageVC?.readChapterModel.pageCount)!
+                                previousPageVC?.readPageController.readConfigure.changeLookPage = (previousPageVC?.readChapterModel.pageCount.intValue)! - 1
+                                previousPageVC?.isLastPage = true
+                                previousPageVC?.content = previousPageVC?.readChapterModel.stringOfPage((previousPageVC?.readRecord.page.intValue)! - 1)
                                 // 记录
                                 self?.readPageController.coverController.setController(previousPageVC!, animated: (HJReadConfigureManger.shareManager.flipEffect.rawValue != 0), isAbove: false)
                                 self?.readPageController.readConfigure.synchronizationChangeData()
                             })
+                        }else{
+                            readPageController.coverController.setController(previousPageVC!, animated: (HJReadConfigureManger.shareManager.flipEffect.rawValue != 0), isAbove: true)
+                            
+                            // 记录
+                            readPageController.readConfigure.synchronizationChangeData()
                         }
-                    readPageController.coverController.setController(previousPageVC!, animated: (HJReadConfigureManger.shareManager.flipEffect.rawValue != 0), isAbove: true)
-                    
-                    // 记录
-                    readPageController.readConfigure.synchronizationChangeData()
-                }
+                    }else{
+                        readPageController.coverController.setController(previousPageVC!, animated: (HJReadConfigureManger.shareManager.flipEffect.rawValue != 0), isAbove: true)
+                        
+                        // 记录
+                        readPageController.readConfigure.synchronizationChangeData()
+                    }
                 }
                 
             }else if point.x > (HJTempW * 2) { // 右边
