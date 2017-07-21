@@ -78,16 +78,22 @@ class HJReadPageDataConfigure: NSObject {
      */
     func GoToReadChapter(_ chapterID:String,chapterLookPageClear:Bool,result:((_ isOK:Bool)->Void)?) {
         
-//        MBProgressHUD.showMessage("加载网络数据")
-        
         if !readPageController.readModel.readChapterListModels.isEmpty {
             
             let readChapterModel = GetReadChapterModel(chapterID)
             
             if readChapterModel != nil { // 有这个章节
-                
-                GoToReadChapter(readChapterModel!, chapterLookPageClear: chapterLookPageClear, result: result)
-                
+                if readChapterModel?.chapterContent.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+                    let hud = MBProgressHUD.showMessage("加载网络数据")
+                    HJReadDataManager.reqChapterContent(withChapterID: chapterID, bookID: readPageController.readModel.bookID, callback: { [weak self] (rs) in
+                        hud.hide(true)
+                        readChapterModel?.chapterContent = rs
+                        readChapterModel?.updateFont()
+                        self?.GoToReadChapter(readChapterModel!, chapterLookPageClear: chapterLookPageClear, result: result)
+                    })
+                }else{
+                    GoToReadChapter(readChapterModel!, chapterLookPageClear: chapterLookPageClear, result: result)
+                }
             }else{ // 没有章节
                 
                 if readPageController.readModel.isLocalBook.boolValue { // 本地小说
