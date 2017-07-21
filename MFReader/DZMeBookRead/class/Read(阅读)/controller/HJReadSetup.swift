@@ -106,7 +106,7 @@ class HJReadSetup: NSObject,UIGestureRecognizerDelegate,HJReadSettingColorViewDe
                                 self?.readPageController.readConfigure.synchronizationChangeData()
                             })
                             if !isLocal {
-                                hud?.show(true)
+                                hud.show(true)
                             }
                         }else{
                             readPageController.coverController.setController(previousPageVC!, animated: (HJReadConfigureManger.shareManager.flipEffect.rawValue != 0), isAbove: true)
