@@ -23,7 +23,15 @@ class HJReadDataManager: NSObject {
             }
         }
     }
-    class func reqChapterContent(withChapterID:String,bookID:String,callback : @escaping(_ result:String)->()){
+    
+    /// 请求小说内容
+    ///
+    /// - Parameters:
+    ///   - withChapterID: 章节ID
+    ///   - bookID: 小说ID
+    ///   - callback: 回调
+    /// - Returns: 是否已经存在本地数据
+    class func reqChapterContent(withChapterID:String,bookID:String,callback : @escaping(_ result:String)->()) -> Bool{
         let model = ReadKeyedUnarchiver(bookID, fileName: withChapterID) as? HJReadChapterModel
         DispatchQueue.global().async {
             usleep(500)
@@ -35,5 +43,11 @@ class HJReadDataManager: NSObject {
                 }
             }
         }
+        if model != nil && model?.chapterContent.trimmingCharacters(in: .whitespacesAndNewlines) != ""{
+            return true
+        }else{
+            return false
+        }
+
     }
 }

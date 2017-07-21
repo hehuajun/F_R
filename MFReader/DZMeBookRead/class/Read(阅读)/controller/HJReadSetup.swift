@@ -90,8 +90,9 @@ class HJReadSetup: NSObject,UIGestureRecognizerDelegate,HJReadSettingColorViewDe
                 if previousPageVC != nil { // 有上一页
                     if readPageController.readModel.readRecord.readChapterListModel.chapterID != previousPageVC?.readRecord.readChapterListModel.chapterID{
                         if previousPageVC?.readChapterModel.chapterContent.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-                            let hud = MBProgressHUD.showMessage("请求章节数据", to: readPageController.view)
-                            HJReadDataManager.reqChapterContent(withChapterID: (previousPageVC?.readRecord.readChapterListModel.chapterID)!, bookID: self.readPageController.readModel.bookID, callback: { [weak self](content) in
+                            let hud = MBProgressHUD.init()
+                            hud.labelText = "加载数据中..."
+                            let isLocal = HJReadDataManager.reqChapterContent(withChapterID: (previousPageVC?.readRecord.readChapterListModel.chapterID)!, bookID: self.readPageController.readModel.bookID, callback: { [weak self](content) in
                                 hud.hide(true)
                                 previousPageVC?.readChapterModel.chapterContent = content
                                 previousPageVC?.readChapterModel.updateFont()
@@ -104,6 +105,9 @@ class HJReadSetup: NSObject,UIGestureRecognizerDelegate,HJReadSettingColorViewDe
                                 self?.readPageController.coverController.setController(previousPageVC!, animated: (HJReadConfigureManger.shareManager.flipEffect.rawValue != 0), isAbove: false)
                                 self?.readPageController.readConfigure.synchronizationChangeData()
                             })
+                            if !isLocal {
+                                hud?.show(true)
+                            }
                         }else{
                             readPageController.coverController.setController(previousPageVC!, animated: (HJReadConfigureManger.shareManager.flipEffect.rawValue != 0), isAbove: true)
                             
@@ -126,8 +130,9 @@ class HJReadSetup: NSObject,UIGestureRecognizerDelegate,HJReadSettingColorViewDe
                     
                     if readPageController.readModel.readRecord.readChapterListModel.chapterID != nextPageVC?.readRecord.readChapterListModel.chapterID{
                         if nextPageVC?.readChapterModel.chapterContent.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-                            let hud = MBProgressHUD.showMessage("请求章节数据", to: readPageController.view)
-                            HJReadDataManager.reqChapterContent(withChapterID: (nextPageVC?.readRecord.readChapterListModel.chapterID)!, bookID: self.readPageController.readModel.bookID, callback: { [weak self](content) in
+                            let hud = MBProgressHUD.init()
+                            hud.labelText = "加载数据中..."
+                            let isLocal = HJReadDataManager.reqChapterContent(withChapterID: (nextPageVC?.readRecord.readChapterListModel.chapterID)!, bookID: self.readPageController.readModel.bookID, callback: { [weak self](content) in
                                 hud.hide(true)
                                 let cm = self?.readPageController.readConfigure.UpdateReadChapterContent(content: content, chapterID: (nextPageVC?.readChapterModel.chapterID)!)
                                 
@@ -139,6 +144,9 @@ class HJReadSetup: NSObject,UIGestureRecognizerDelegate,HJReadSettingColorViewDe
                                 self?.readPageController.coverController.setController(nextPageVC!, animated: (HJReadConfigureManger.shareManager.flipEffect.rawValue != 0), isAbove: false)
                                 self?.readPageController.readConfigure.synchronizationChangeData()
                             })
+                            if !isLocal {
+                                hud.show(true)
+                            }
                         }
                     }else{
                         readPageController.coverController.setController(nextPageVC!, animated: (HJReadConfigureManger.shareManager.flipEffect.rawValue != 0), isAbove: false)
@@ -225,8 +233,9 @@ class HJReadSetup: NSObject,UIGestureRecognizerDelegate,HJReadSettingColorViewDe
         var chapterModel = readPageController.readConfigure.GetReadChapterModel(model.chapterID)
         
         if chapterModel?.chapterContent.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-            let hud = MBProgressHUD.showMessage("请求章节数据", to: readPageController.view)
-            HJReadDataManager.reqChapterContent(withChapterID: (chapterModel?.chapterID)!, bookID: self.readPageController.readModel.bookID, callback: { [weak self](content) in
+            let hud = MBProgressHUD.init()
+            hud.labelText = "加载数据中..."
+            let isLocal = HJReadDataManager.reqChapterContent(withChapterID: (chapterModel?.chapterID)!, bookID: self.readPageController.readModel.bookID, callback: { [weak self](content) in
                 hud.hide(true)
                chapterModel = self?.readPageController.readConfigure.UpdateReadChapterContent(content: content, chapterID: model.chapterID)
                 
@@ -236,6 +245,9 @@ class HJReadSetup: NSObject,UIGestureRecognizerDelegate,HJReadSettingColorViewDe
                 
                 self?.RFHidden((self?.isRFHidden)!)
             })
+            if !isLocal {
+                hud.show(true)
+            }
         }else{
             setFlipEffect(HJReadConfigureManger.shareManager.flipEffect,chapterID: model.chapterID,chapterLookPageClear: chapterLookPageClear,contentOffsetYClear: true)
             

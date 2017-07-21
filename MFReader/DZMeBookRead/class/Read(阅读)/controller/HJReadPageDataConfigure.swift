@@ -84,13 +84,17 @@ class HJReadPageDataConfigure: NSObject {
             
             if readChapterModel != nil { // 有这个章节
                 if readChapterModel?.chapterContent.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-                    let hud = MBProgressHUD.showMessage("加载网络数据")
-                    HJReadDataManager.reqChapterContent(withChapterID: chapterID, bookID: readPageController.readModel.bookID, callback: { [weak self] (rs) in
+                    let hud = MBProgressHUD.init()
+                    hud.labelText = "加载数据中..."
+                    let isLocal = HJReadDataManager.reqChapterContent(withChapterID: chapterID, bookID: readPageController.readModel.bookID, callback: { [weak self] (rs) in
                         hud.hide(true)
                         readChapterModel?.chapterContent = rs
                         readChapterModel?.updateFont()
                         self?.GoToReadChapter(readChapterModel!, chapterLookPageClear: chapterLookPageClear, result: result)
                     })
+                    if !isLocal {
+                        hud.show(true)
+                    }
                 }else{
                     GoToReadChapter(readChapterModel!, chapterLookPageClear: chapterLookPageClear, result: result)
                 }

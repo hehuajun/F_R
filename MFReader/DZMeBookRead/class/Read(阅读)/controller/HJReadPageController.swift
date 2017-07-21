@@ -132,9 +132,10 @@ import UIKit
     }
     func reqData(vc:HJReadViewController?){
         if  vc?.content.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
-            let hud = MBProgressHUD.showMessage("加载数据中...", to: self.view.window)
-            HJReadDataManager.reqChapterContent(withChapterID: (vc?.readChapterModel.chapterID)!, bookID: (vc?.readPageController.readModel.bookID)!, callback: { (rs) in
-                hud.hide(true)
+            let hud = MBProgressHUD.init(window: self.view.window)
+            hud?.labelText = "加载数据中..."
+            let isLocal = HJReadDataManager.reqChapterContent(withChapterID: (vc?.readChapterModel.chapterID)!, bookID: (vc?.readPageController.readModel.bookID)!, callback: { (rs) in
+                hud?.hide(true)
                 vc?.content = rs
                 vc?.readChapterModel.chapterContent = rs
                 vc?.readChapterModel.updateFont()
@@ -144,14 +145,18 @@ import UIKit
                 vc?.RefreshView()
                 vc?.GetCurrentPage()
             })
+            if !isLocal {
+                hud?.show(true)
+            }
         }
     }
     func coverController(_ coverController: DZMCoverController, getAboveControllerWithCurrentController currentController: UIViewController?) -> UIViewController? {
         let vc :HJReadViewController? = readConfigure.GetReadPreviousPage()
         if  vc?.content.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
-            let hud = MBProgressHUD.showMessage("加载数据中...", to: self.view.window)
-            HJReadDataManager.reqChapterContent(withChapterID: (vc?.readChapterModel.chapterID)!, bookID: (vc?.readPageController.readModel.bookID)!, callback: { (rs) in
-                hud.hide(true)
+            let hud = MBProgressHUD.init(window: self.view.window)
+            hud?.labelText = "加载数据中..."
+            let isLocal = HJReadDataManager.reqChapterContent(withChapterID: (vc?.readChapterModel.chapterID)!, bookID: (vc?.readPageController.readModel.bookID)!, callback: { (rs) in
+                hud?.hide(true)
                 vc?.readChapterModel.chapterContent = rs
                 vc?.readChapterModel.updateFont()
                 vc?.readRecord.readChapterModel?.updateFont()
@@ -163,6 +168,9 @@ import UIKit
                 vc?.GetCurrentPage()
                 vc?.RefreshView()
             })
+            if !isLocal {
+                hud?.show(true)
+            }
         }
         return vc
     }
@@ -170,9 +178,10 @@ import UIKit
     func coverController(_ coverController: DZMCoverController, getBelowControllerWithCurrentController currentController: UIViewController?) -> UIViewController? {
         let vc :HJReadViewController? = readConfigure.GetReadNextPage()
         if  vc?.content.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
-            let hud = MBProgressHUD.showMessage("加载数据中...", to: self.view.window)
-            HJReadDataManager.reqChapterContent(withChapterID: (vc?.readChapterModel.chapterID)!, bookID: (vc?.readPageController.readModel.bookID)!, callback: { (rs) in
-                hud.hide(true)
+            let hud = MBProgressHUD.init(window: self.view.window)
+            hud?.labelText = "加载数据中..."
+            let isLocal = HJReadDataManager.reqChapterContent(withChapterID: (vc?.readChapterModel.chapterID)!, bookID: (vc?.readPageController.readModel.bookID)!, callback: { (rs) in
+                hud?.hide(true)
                 vc?.content = rs
                 vc?.readChapterModel.chapterContent = rs
                 vc?.readChapterModel.updateFont()
@@ -182,6 +191,9 @@ import UIKit
                 vc?.RefreshView()
                 vc?.GetCurrentPage()
             })
+            if !isLocal {
+                hud?.show(true)
+            }
         }
 
         return vc

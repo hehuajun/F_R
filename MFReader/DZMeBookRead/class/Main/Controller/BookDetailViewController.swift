@@ -44,32 +44,44 @@ class BookDetailViewController: UIViewController{
     func goContentVC() -> Void {
         
         //判断本地是否存在这本书的相关目录
-        
+        let cm = HJReadModel.readModelWithFileName("0")
         readVC = HJReadPageController()
-        //如果存在，则直接进入阅读器中进行阅读，同时更新本地的目录列表
-        HJReadDataManager.reqChapters(withBookID: "0") {  [weak self] (chapters) in
-            if self != nil {
-                self?.readVC!.readModel = HJReadModel.init(bookID: "0", content: chapters)
-                self?.hidesBottomBarWhenPushed = true
-                self?.navigationController?.pushViewController((self?.readVC!)!, animated: true)
+        if cm != nil {
+            //如果存在，则直接进入阅读器中进行阅读，同时更新本地的目录列表
+            self.readVC!.readModel = HJReadModel.readModelWithFileName("0")
+            self.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController((self.readVC!), animated: true)
+
+        }else{
+            //如果不存在则请求网络目录，然后开始加载
+            HJReadDataManager.reqChapters(withBookID: "0") {  [weak self] (chapters) in
+                if self != nil {
+                    self?.readVC!.readModel = HJReadModel.init(bookID: "0", content: chapters)
+                    self?.hidesBottomBarWhenPushed = true
+                    self?.navigationController?.pushViewController((self?.readVC!)!, animated: true)
+                }
             }
         }
+        
         //如果不存在，则从服务器上拉取目录列表，然后再进入阅读器
         
         //更新此书的章节目录
         
         //下载章节目录，存储在本地
-//        MBProgressHUD.showMessage("本地文件第一次解析慢,以后就会秒进了")
-//        let fileURL = Bundle.main.url(forResource: "mdjyml", withExtension: "txt")
-//            HJReadParser.separateLocalURL(fileURL!) { [weak self] (isOK) in
-//                MBProgressHUD.hide()
-//                if self != nil {
-//                    self?.readVC!.readModel = HJReadModel.readModelWithFileName("mdjyml")
-//                    self?.hidesBottomBarWhenPushed = true
-//                    self?.navigationController?.pushViewController((self?.readVC!)!, animated: true)
-////                    self?.hidesBottomBarWhenPushed = false
-//                }
-//            }
+        
+        
+        //            MBProgressHUD.showMessage("本地文件第一次解析慢,以后就会秒进了")
+        //            let fileURL = Bundle.main.url(forResource: "mdjyml", withExtension: "txt")
+        //            HJReadParser.separateLocalURL(fileURL!) { [weak self] (isOK) in
+        //                MBProgressHUD.hide()
+        //                if self != nil {
+        //                    self?.readVC!.readModel = HJReadModel.readModelWithFileName("mdjyml")
+        //                    self?.hidesBottomBarWhenPushed = true
+        //                    self?.navigationController?.pushViewController((self?.readVC!)!, animated: true)
+        //                    //                    self?.hidesBottomBarWhenPushed = false
+        //                }
+        //            }
+
     }
     
 }
