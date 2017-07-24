@@ -40,7 +40,7 @@ class CollectionViewController: UICollectionViewController {
         let itemWidth = (collectionViewWidth - spacing * CGFloat(columnsNum-1))
             / CGFloat(columnsNum)
         //设置单元格宽度和高度
-        layout.itemSize = CGSize(width:itemWidth, height:itemWidth*1.33)
+        layout.itemSize = CGSize(width:itemWidth, height:itemWidth*1.2 + 44)
         // Do any additional setup after loading the view.
     }
     
