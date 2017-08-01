@@ -28,18 +28,41 @@ class BookCityViewController: WMPageController {
         self.view.backgroundColor = UIColor.white
         self.postNotification = true
         self.bounces = true
-        self.title = "书城"
+//        self.title = "书城"
         self.setupBanner(view: self.view)
         
         let selectedImage = UIImage.init(named: "书城(1)")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         self.tabBarItem = UITabBarItem(title: "书城", image: UIImage.init(named: "书城"), selectedImage: selectedImage)
-        
+        self.setupNavigation()
 //        self.tabBarItem.selectedImage = selectedImage
 //        self.tabBarItem.image = UIImage.init(named: "书城")
         
         // Do any additional setup after loading the view.
     }
-    
+    func setupNavigation() {
+        let sb = UISearchBar.init(frame: CGRect.init(x: 0, y: 0, width: HJConst.kScreenWidth - 20, height: 44))
+        sb.placeholder = "输入搜索关键字"
+        sb.showsCancelButton = true
+//        sb.delegate = self
+        //找到取消按钮
+        let cancelBtn = sb.value(forKey: "cancelButton") as! UIButton
+        //修改标题和标题颜色
+        cancelBtn.setTitle("取消", for: .normal)
+        cancelBtn.setTitleColor(.gray, for: .normal)
+        
+        let tf = sb.value(forKey: "_searchField") as! UITextField
+        tf.layer.borderColor = UIColor.lightGray.cgColor
+        tf.layer.borderWidth = 1
+        tf.layer.cornerRadius = 12
+        tf.leftViewMode = .never
+        var frame = tf.frame
+        frame.size.height = 44
+        frame.origin.y = 0
+        tf.frame = frame
+        let bLeft = UIBarButtonItem.init(customView: sb)
+        self.navigationItem.leftBarButtonItems = [bLeft]
+        sb.becomeFirstResponder()
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false

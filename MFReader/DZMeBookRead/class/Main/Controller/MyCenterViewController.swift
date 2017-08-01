@@ -21,7 +21,6 @@ class MyCenterViewController: WMPageController{
         self.progressColor = HJConst.kThemeColr
         self.menuViewStyle = WMMenuViewStyle.line
         self.view.backgroundColor = UIColor.white
-//        self.menuHeight = 44
         self.pageAnimatable = true
         self.menuItemWidth = HJConst.kScreenWidth/3;
         self.postNotification = true
@@ -29,36 +28,39 @@ class MyCenterViewController: WMPageController{
         self.title = "书城"
         let selectedImage = UIImage.init(named: "主页(1)")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         self.tabBarItem = UITabBarItem(title: "我的", image: UIImage.init(named: "主页"), selectedImage: selectedImage)
-
+        self.setupNavigation()
     }
-    
+    func setupNavigation() {
+        let sb = UISearchBar.init(frame: CGRect.init(x: 0, y: 0, width: HJConst.kScreenWidth - 20, height: 44))
+        sb.placeholder = "输入搜索关键字"
+        sb.showsCancelButton = true
+        //        sb.delegate = self
+        //找到取消按钮
+        let cancelBtn = sb.value(forKey: "cancelButton") as! UIButton
+        //修改标题和标题颜色
+        cancelBtn.setTitle("取消", for: .normal)
+        cancelBtn.setTitleColor(.gray, for: .normal)
+        
+        let tf = sb.value(forKey: "_searchField") as! UITextField
+        tf.layer.borderColor = UIColor.lightGray.cgColor
+        tf.layer.borderWidth = 1
+        tf.layer.cornerRadius = 12
+        tf.leftViewMode = .never
+        var frame = tf.frame
+        frame.size.height = 44
+        frame.origin.y = 0
+        tf.frame = frame
+        let bLeft = UIBarButtonItem.init(customView: sb)
+        self.navigationItem.leftBarButtonItems = [bLeft]
+        sb.becomeFirstResponder()
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-//    func getHomeVC() -> UINavigationController{
-//        let wmpcHome = WMPageController.init()
-//        wmpcHome.delegate = self
-//        wmpcHome.dataSource = self
-//        wmpcHome.menuViewLayoutMode = WMMenuViewLayoutMode.center
-//        wmpcHome.titleColorSelected = HJConst.kThemeColr
-//        wmpcHome.progressColor = HJConst.kThemeColr
-//        wmpcHome.menuViewStyle = WMMenuViewStyle.line
-//        wmpcHome.view.backgroundColor = UIColor.white
-//        wmpcHome.menuHeight = 44;
-//        wmpcHome.pageAnimatable = true
-//        wmpcHome.menuItemWidth = HJConst.kScreenWidth/3;
-//        wmpcHome.postNotification = true
-//        wmpcHome.bounces = true
-//        wmpcHome.title = "书城"
-//        let navVC = UINavigationController(rootViewController:wmpcHome)
-//        let selectedImage = UIImage.init(named: "主页(1)")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
-//        wmpcHome.tabBarItem = UITabBarItem(title: "我的", image: UIImage.init(named: "主页"), selectedImage: selectedImage)
-//        
-//        return navVC
-//    }
+
     override func numbersOfChildControllers(in pageController: WMPageController) -> Int {
         return 4
     }
