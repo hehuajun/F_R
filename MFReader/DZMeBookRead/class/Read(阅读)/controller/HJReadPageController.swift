@@ -130,32 +130,32 @@ import UIKit
     }
     func reqData(vc:HJReadViewController?){
         if  vc?.content.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
-            let hud = MBProgressHUD.init(window: self.view.window)
-            hud?.labelText = "加载数据中..."
-            let isLocal = HJReadDataManager.reqChapterContent(withChapterID: (vc?.readChapterModel.chapterID)!, bookID: (vc?.readPageController.readModel.bookID)!, callback: { (rs) in
-                hud?.hide(true)
+            readSetup.readUI.hud.labelText = "加载中……"
+            readSetup.readUI.hud.show(true)
+            let isLocal = HJReadDataManager.reqChapterContent(withChapterID: (vc?.readChapterModel.chapterID)!, bookID: (vc?.readPageController.readModel.bookID)!, callback: { [weak self](rs) in
+                self?.readSetup.readUI.hud?.hide(true)
                 vc?.content = rs
                 vc?.readChapterModel.chapterContent = rs
                 vc?.readChapterModel.updateFont()
                 vc?.readRecord.readChapterModel?.updateFont()
                 let newReadCharpterModel = vc?.readPageController.readConfigure.UpdateReadChapterContent(content: (vc?.content)!, chapterID: (vc?.readChapterModel.chapterID)!)
-                ReadKeyedArchiver(self.readModel.bookID, fileName: newReadCharpterModel?.chapterID ?? "0", object: newReadCharpterModel!)
+                ReadKeyedArchiver((self?.readModel.bookID) ?? "0", fileName: newReadCharpterModel?.chapterID ?? "0", object: newReadCharpterModel!)
 //                vc?.readRecord = vc?.readPageController.readModel.readRecord
                 vc?.RefreshView()
                 vc?.GetCurrentPage()
             })
             if !isLocal {
-                hud?.show(true)
+                readSetup.readUI.hud?.show(true)
             }
         }
     }
     func coverController(_ coverController: DZMCoverController, getAboveControllerWithCurrentController currentController: UIViewController?) -> UIViewController? {
         let vc :HJReadViewController? = readConfigure.GetReadPreviousPage()
         if  vc?.content.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
-            let hud = MBProgressHUD.init(window: self.view.window)
-            hud?.labelText = "加载数据中..."
-            let isLocal = HJReadDataManager.reqChapterContent(withChapterID: (vc?.readChapterModel.chapterID)!, bookID: (vc?.readPageController.readModel.bookID)!, callback: { (rs) in
-                hud?.hide(true)
+            readSetup.readUI.hud.labelText = "加载中……"
+            readSetup.readUI.hud.show(true)
+            let isLocal = HJReadDataManager.reqChapterContent(withChapterID: (vc?.readChapterModel.chapterID)!, bookID: (vc?.readPageController.readModel.bookID)!, callback: { [weak self](rs) in
+                self?.readSetup.readUI.hud?.hide(true)
                 vc?.readChapterModel.chapterContent = rs
                 vc?.readChapterModel.updateFont()
                 vc?.readRecord.readChapterModel?.updateFont()
@@ -164,12 +164,12 @@ import UIKit
                 vc?.isLastPage = true
                 vc?.content = vc?.readChapterModel.stringOfPage((vc?.readRecord.page.intValue)! - 1)
                 let newReadCharpterModel = vc?.readPageController.readConfigure.UpdateReadChapterContent(content: (vc?.content)!, chapterID: (vc?.readChapterModel.chapterID)!)
-                ReadKeyedArchiver(self.readModel.bookID, fileName: newReadCharpterModel?.chapterID ?? "0", object: newReadCharpterModel!)
+                ReadKeyedArchiver(self?.readModel.bookID ?? "0", fileName: newReadCharpterModel?.chapterID ?? "0", object: newReadCharpterModel!)
                 vc?.GetCurrentPage()
                 vc?.RefreshView()
             })
             if !isLocal {
-                hud?.show(true)
+                readSetup.readUI.hud?.show(true)
             }
         }
         return vc
@@ -178,22 +178,22 @@ import UIKit
     func coverController(_ coverController: DZMCoverController, getBelowControllerWithCurrentController currentController: UIViewController?) -> UIViewController? {
         let vc :HJReadViewController? = readConfigure.GetReadNextPage()
         if  vc?.content.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
-            let hud = MBProgressHUD.init(window: self.view.window)
-            hud?.labelText = "加载数据中..."
-            let isLocal = HJReadDataManager.reqChapterContent(withChapterID: (vc?.readChapterModel.chapterID)!, bookID: (vc?.readPageController.readModel.bookID)!, callback: { (rs) in
-                hud?.hide(true)
+            readSetup.readUI.hud.labelText = "加载中……"
+            readSetup.readUI.hud.show(true)
+            let isLocal = HJReadDataManager.reqChapterContent(withChapterID: (vc?.readChapterModel.chapterID)!, bookID: (vc?.readPageController.readModel.bookID)!, callback: { [weak self](rs) in
+                self?.readSetup.readUI.hud?.hide(true)
                 vc?.content = rs
                 vc?.readChapterModel.chapterContent = rs
                 vc?.readChapterModel.updateFont()
                 vc?.readRecord.readChapterModel?.updateFont()
                 let newReadCharpterModel = vc?.readPageController.readConfigure.UpdateReadChapterContent(content: (vc?.content)!, chapterID: (vc?.readChapterModel.chapterID)!)
-                ReadKeyedArchiver(self.readModel.bookID, fileName: newReadCharpterModel?.chapterID ?? "0", object: newReadCharpterModel!)
+                ReadKeyedArchiver(self?.readModel.bookID ?? "0", fileName: newReadCharpterModel?.chapterID ?? "0", object: newReadCharpterModel!)
                 //                vc?.readRecord = vc?.readPageController.readModel.readRecord
                 vc?.RefreshView()
                 vc?.GetCurrentPage()
             })
             if !isLocal {
-                hud?.show(true)
+                readSetup.readUI.hud?.show(true)
             }
         }
 
