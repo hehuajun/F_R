@@ -37,6 +37,7 @@ class HJReadDataManager: NSObject {
             usleep(1500)
             DispatchQueue.main.async {
                 if model != nil && model?.chapterContent.trimmingCharacters(in: .whitespacesAndNewlines) != ""{
+                    
                     callback((model?.chapterContent)!)
                 }else{
                     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+2.0, execute: {
