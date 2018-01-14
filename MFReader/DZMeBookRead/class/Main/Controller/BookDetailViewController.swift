@@ -42,21 +42,20 @@ class BookDetailViewController: UIViewController{
         self.goContentVC()
     }
     func goContentVC() -> Void {
-        
         //判断本地是否存在这本书的相关目录
-        let cm = HJReadModel.readModelWithFileName("0")
+        let cm = HJReadModel.readModelWithFileName("314")
         readVC = HJReadPageController()
         if cm != nil {
             //如果存在，则直接进入阅读器中进行阅读，同时更新本地的目录列表
-            self.readVC!.readModel = HJReadModel.readModelWithFileName("0")
+            self.readVC!.readModel = HJReadModel.readModelWithFileName("314")
             self.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController((self.readVC!), animated: true)
 
         }else{
             //如果不存在则请求网络目录，然后开始加载
-            HJReadDataManager.reqChapters(withBookID: "0") {  [weak self] (chapters) in
+            HJReadDataManager.reqChapters(withBookID: "314") {  [weak self] (chapters) in
                 if self != nil {
-                    self?.readVC!.readModel = HJReadModel.init(bookID: "0", content: chapters)
+                    self?.readVC!.readModel = HJReadModel.init(bookID: "314", content: chapters)
                     self?.hidesBottomBarWhenPushed = true
                     self?.navigationController?.pushViewController((self?.readVC!)!, animated: true)
                 }

@@ -234,7 +234,8 @@ func ReadKeyedArchiver(_ folderName:String,fileName:String,object:AnyObject) {
         
         path = path + "/\(fileName)"
         
-        NSKeyedArchiver.archiveRootObject(object, toFile: path)
+        let rs = NSKeyedArchiver.archiveRootObject(object, toFile: path)
+        print("archiver rs:\(rs)")
     }
 }
 

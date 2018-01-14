@@ -50,7 +50,6 @@ import UIKit
     }
     
     // MARK: -- PageController
-    // MARK: -- PageController
     
     func creatPageController(_ displayController:UIViewController) {
         
@@ -120,7 +119,6 @@ import UIKit
             if currentController != nil {
                 
                 let vc  = currentController as! HJReadViewController
-                
                 synchronizationPageViewControllerData(vc)
             }
             
@@ -140,7 +138,8 @@ import UIKit
                 vc?.readChapterModel.chapterContent = rs
                 vc?.readChapterModel.updateFont()
                 vc?.readRecord.readChapterModel?.updateFont()
-                _ = vc?.readPageController.readConfigure.UpdateReadChapterContent(content: (vc?.content)!, chapterID: (vc?.readChapterModel.chapterID)!)
+                let newReadCharpterModel = vc?.readPageController.readConfigure.UpdateReadChapterContent(content: (vc?.content)!, chapterID: (vc?.readChapterModel.chapterID)!)
+                ReadKeyedArchiver(self.readModel.bookID, fileName: newReadCharpterModel?.chapterID ?? "0", object: newReadCharpterModel!)
 //                vc?.readRecord = vc?.readPageController.readModel.readRecord
                 vc?.RefreshView()
                 vc?.GetCurrentPage()
@@ -164,7 +163,8 @@ import UIKit
                 vc?.readPageController.readConfigure.changeLookPage = (vc?.readChapterModel.pageCount.intValue)! - 1
                 vc?.isLastPage = true
                 vc?.content = vc?.readChapterModel.stringOfPage((vc?.readRecord.page.intValue)! - 1)
-                
+                let newReadCharpterModel = vc?.readPageController.readConfigure.UpdateReadChapterContent(content: (vc?.content)!, chapterID: (vc?.readChapterModel.chapterID)!)
+                ReadKeyedArchiver(self.readModel.bookID, fileName: newReadCharpterModel?.chapterID ?? "0", object: newReadCharpterModel!)
                 vc?.GetCurrentPage()
                 vc?.RefreshView()
             })
@@ -186,7 +186,8 @@ import UIKit
                 vc?.readChapterModel.chapterContent = rs
                 vc?.readChapterModel.updateFont()
                 vc?.readRecord.readChapterModel?.updateFont()
-                _ = vc?.readPageController.readConfigure.UpdateReadChapterContent(content: (vc?.content)!, chapterID: (vc?.readChapterModel.chapterID)!)
+                let newReadCharpterModel = vc?.readPageController.readConfigure.UpdateReadChapterContent(content: (vc?.content)!, chapterID: (vc?.readChapterModel.chapterID)!)
+                ReadKeyedArchiver(self.readModel.bookID, fileName: newReadCharpterModel?.chapterID ?? "0", object: newReadCharpterModel!)
                 //                vc?.readRecord = vc?.readPageController.readModel.readRecord
                 vc?.RefreshView()
                 vc?.GetCurrentPage()

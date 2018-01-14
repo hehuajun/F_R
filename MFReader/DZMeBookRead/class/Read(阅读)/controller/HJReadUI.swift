@@ -25,7 +25,7 @@ class HJReadUI: NSObject,HJReadBottomViewDelegate,HJReadLightViewDelegate {
     var leftView:HJReadLeftView!
     var lightView:HJReadLightView!
     var settingView:HJReadSettingView!
-    
+    var hud:MBProgressHUD!
     /// 阅读控制器设置
     class func readUIWithReadController(_ readPageController:HJReadPageController) ->HJReadUI {
         
@@ -71,6 +71,9 @@ class HJReadUI: NSObject,HJReadBottomViewDelegate,HJReadLightViewDelegate {
         bottomView(true, animated: false, completion: nil)
         lightView(true, animated: false, completion: nil)
         settingView(true, animated: false, completion: nil)
+        
+        hud = MBProgressHUD.init(view: readPageController.view)
+        readPageController.view.addSubview(hud)
     }
     
     
@@ -87,21 +90,36 @@ class HJReadUI: NSObject,HJReadBottomViewDelegate,HJReadLightViewDelegate {
     /// 上一章
     func readBottomViewLastChapter(_ readBottomView: HJReadBottomView) {
         
-        readPageController.readSetup.setFlipEffect(HJReadConfigureManger.shareManager.flipEffect,chapterID: "\(readPageController.readModel.readRecord.readChapterListModel.chapterID.integerValue() - 1)", chapterLookPageClear: true, contentOffsetYClear: true)
+        let chID = "\(readPageController.readModel.readRecord.readChapterListModel.chapterID.integerValue() - 1)"
+        
+        readPageController.readSetup.setFlipEffect(HJReadConfigureManger.shareManager.flipEffect,
+                                                   chapterID: chID,
+                                                   chapterLookPageClear: true,
+                                                   contentOffsetYClear: true)
     }
     
     /// 下一章
     func readBottomViewNextChapter(_ readBottomView: HJReadBottomView) {
         
-        readPageController.readSetup.setFlipEffect(HJReadConfigureManger.shareManager.flipEffect,chapterID: "\(readPageController.readModel.readRecord.readChapterListModel.chapterID.integerValue() + 1)", chapterLookPageClear: true,contentOffsetYClear: true)
+        let chID = "\(readPageController.readModel.readRecord.readChapterListModel.chapterID.integerValue() + 1)"
+        
+        readPageController.readSetup.setFlipEffect(HJReadConfigureManger.shareManager.flipEffect,
+                                                   chapterID:chID,
+                                                   chapterLookPageClear: true,
+                                                   contentOffsetYClear: true)
     }
     
     /// 拖动进度
     func readBottomViewChangeSlider(_ readBottomView: HJReadBottomView, slider: UISlider) {
         
         readPageController.readModel.readRecord.page = NSNumber(value:Int(slider.value))
+        
+        let chID = readPageController.readModel.readRecord.readChapterModel!.chapterID
        
-        readPageController.readSetup.setFlipEffect(HJReadConfigureManger.shareManager.flipEffect,chapterID: readPageController.readModel.readRecord.readChapterModel!.chapterID,chapterLookPageClear: false, contentOffsetYClear: true)
+        readPageController.readSetup.setFlipEffect(HJReadConfigureManger.shareManager.flipEffect,
+                                                   chapterID: chID!,
+                                                   chapterLookPageClear: false,
+                                                   contentOffsetYClear: true)
     }
     
     

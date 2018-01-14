@@ -84,16 +84,16 @@ class HJReadPageDataConfigure: NSObject {
             
             if readChapterModel != nil { // 有这个章节
                 if readChapterModel?.chapterContent.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-                    let hud = MBProgressHUD.init()
-                    hud.labelText = "加载数据中..."
+                    readPageController.readSetup.readUI.hud.labelText = "加载中……"
+                    readPageController.readSetup.readUI.hud.show(true)
                     let isLocal = HJReadDataManager.reqChapterContent(withChapterID: chapterID, bookID: readPageController.readModel.bookID, callback: { [weak self] (rs) in
-                        hud.hide(true)
+                        self?.readPageController.readSetup.readUI.hud.hide(true)
                         readChapterModel?.chapterContent = rs
                         readChapterModel?.updateFont()
                         self?.GoToReadChapter(readChapterModel!, chapterLookPageClear: chapterLookPageClear, result: result)
                     })
                     if !isLocal {
-                        hud.show(true)
+                        self.readPageController.readSetup.readUI.hud.show(true)
                     }
                 }else{
                     GoToReadChapter(readChapterModel!, chapterLookPageClear: chapterLookPageClear, result: result)
@@ -129,7 +129,6 @@ class HJReadPageDataConfigure: NSObject {
             
             changeLookPage = 0
         }
-        
         readPageController.creatPageController(GetReadViewController(readChapterModel, currentPage: readPageController.readModel.readRecord.page.intValue))
         
         // 同步本地进度
